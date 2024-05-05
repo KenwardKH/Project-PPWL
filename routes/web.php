@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\JadwalKonserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,5 +27,6 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('auth');
+Route::get('/jadwal_konser', [JadwalKonserController::class, 'show'])->name('jadwal_konser')->middleware('auth');
 
 require __DIR__.'/auth.php';
