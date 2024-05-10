@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\JadwalKonserController;
 
 Route::get('/', function () {
@@ -25,8 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/edit_user/{id}', [MemberController::class, 'edit'])->name('edit_user');
+Route::delete('/user/{id}', '\App\Http\Controllers\MemberController@destroy')->name('delete-user');
+Route::post('/update-user', [MemberController::class, 'update'])->name('update-user');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('auth');
+Route::get('/members', [MemberController::class, 'index'])->name('members')->middleware('auth');
 Route::get('/jadwal_konser', [JadwalKonserController::class, 'show'])->name('jadwal_konser')->middleware('auth');
 Route::get('/add_jadwal_konser', function () {
     return view('add_jadwal_konser');
