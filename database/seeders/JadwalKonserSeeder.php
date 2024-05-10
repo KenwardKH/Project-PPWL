@@ -17,7 +17,7 @@ class JadwalKonserSeeder extends Seeder
         DB::table('jadwal_konsers')->insert([
             "id" => 1,
             "nama" => 'Music Festival',
-            "gambar" => 'band.jpg',
+            "gambar" => 'raisa.jpg',
             "artis" => 'Raisa',
             "harga" => 100000,
             "tanggal_konser" => '2024-06-24',
@@ -31,7 +31,7 @@ class JadwalKonserSeeder extends Seeder
         DB::table('jadwal_konsers')->insert([
             "id" => 2,
             "nama" => 'Music Time',
-            "gambar" => 'music.jpg',
+            "gambar" => 'download.jpg',
             "artis" => 'Kanabob',
             "harga" => 200000,
             "tanggal_konser" => '2024-08-4',

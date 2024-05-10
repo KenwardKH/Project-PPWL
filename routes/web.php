@@ -28,5 +28,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('auth');
 Route::get('/jadwal_konser', [JadwalKonserController::class, 'show'])->name('jadwal_konser')->middleware('auth');
-
+Route::get('/add_jadwal_konser', function () {
+    return view('add_jadwal_konser');
+})->middleware(['auth', 'verified'])->name('add_jadwal_konser');
+Route::post('/add_jadwal_konser',[JadwalKonserController::class, 'store']);
+Route::get('/edit_jadwal_konser/{id}', [JadwalKonserController::class, 'edit'])->name('edit_jadwal_konser');
+Route::post('/update-jadwal_konser', [JadwalKonserController::class, 'update'])->name('update-jadwal_konser');
+Route::delete('/delete-jadwal_konser/{id}', [JadwalKonserController::class, 'destroy'])->name('delete-jadwal_konser');
 require __DIR__.'/auth.php';
