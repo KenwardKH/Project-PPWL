@@ -220,10 +220,22 @@ https://templatemo.com/tm-583-festava-live
                             </li>
                             @auth
                             <li>
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                                    <button type="submit" class="btn custom-btn d-lg-block d-none" style="margin: 10px">{{ __('Log Out') }}</button>
-                                </form>
+                                <div class="hidden sm:flex sm:items-center sm:ms-6" x-data="{ open: false }">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" @click="open = !open" aria-expanded="false">
+                                            {{ Auth::user()->name }}
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-show="open" @click.away="open = false">
+                                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
+                                            <li>
+                                                <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                    <button type="submit" class="dropdown-item">Log Out</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>                    
                             </li>
                             @else
                                 <li><a href="{{route('login')}}" class="btn custom-btn d-lg-block d-none" style="margin: 10px">Login</a></li>
@@ -846,6 +858,8 @@ T e m p l a t e M o
         <script src="js/jquery.sticky.js"></script>
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
