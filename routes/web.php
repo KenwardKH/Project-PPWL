@@ -8,9 +8,6 @@ use App\Http\Controllers\JadwalKonserController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/main', function () {
-    return view('index');
-});
 Route::get('/ticket', function () {
     return view('ticket');
 });
@@ -38,4 +35,5 @@ Route::post('/add_jadwal_konser',[JadwalKonserController::class, 'store']);
 Route::get('/edit_jadwal_konser/{id}', [JadwalKonserController::class, 'edit'])->name('edit_jadwal_konser');
 Route::post('/update-jadwal_konser', [JadwalKonserController::class, 'update'])->name('update-jadwal_konser');
 Route::delete('/delete-jadwal_konser/{id}', [JadwalKonserController::class, 'destroy'])->name('delete-jadwal_konser');
+Route::get('/main', [JadwalKonserController::class, 'index']);
 require __DIR__.'/auth.php';

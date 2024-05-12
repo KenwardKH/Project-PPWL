@@ -21,6 +21,136 @@
         <link href="css/bootstrap-icons.css" rel="stylesheet">
 
         <link href="css/templatemo-festava-live.css" rel="stylesheet">
+
+        <style>
+            * { 
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box; 
+	font-family: 'Times New Roman', Times, serif; 
+} 
+
+.wrapper {  
+	width: 100%; 
+	position: relative; 
+
+} 
+
+.wrapper i { 
+	height: 50px; 
+	width: 50px; 
+	background: rgb(118, 233, 118); 
+	text-align: center; 
+	line-height: 50px; 
+	border-radius: 50%; 
+	cursor: pointer; 
+	position: absolute; 
+	top: 50%; 
+	font-size: 1.25 rem; 
+	transform: translateY(-50%); 
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23); 
+
+} 
+
+.wrapper i:first-child { 
+	left: -22px; 
+
+} 
+
+.wrapper i:last-child { 
+	right: -22px; 
+
+} 
+
+.carousel{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.wrapper .carousel { 
+	display: grid; 
+	grid-auto-flow: column; 
+	grid-auto-columns: calc((100% / 3) - 12px); 
+	gap: 16px; 
+	overflow-x: auto; 
+	scroll-snap-type: x mandatory; 
+	scroll-behavior: smooth; 
+	scrollbar-width: 0; 
+} 
+
+.carousel::-webkit-scrollbar { 
+	display: none; 
+} 
+
+.carousel :where(.card, .img) { 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+} 
+
+.carousel.dragging { 
+	scroll-snap-type: none; 
+	scroll-behavior: auto; 
+} 
+
+.carousel.no-transition { 
+	scroll-behavior: auto; 
+} 
+
+.carousel.dragging .card { 
+	cursor: grab; 
+	user-select: none; 
+} 
+
+.carousel .card { 
+	scroll-snap-align: start; 
+	height: 570px; 
+	list-style: none; 
+	background: #231816; 
+	border-radius: 8px; 
+	display: flex; 
+	cursor: pointer; 
+	width: 98%; 
+    padding-top: 15px;
+	padding-bottom: 15px; 
+	align-items: center; 
+	justify-content: space-around; 
+	flex-direction: column; 
+}
+
+.card .img img { 
+	width: 200px; 
+	height: 250px; 
+	border: 4px solid #fff; 
+} 
+
+.card h2 { 
+	font-weight: 500; 
+    font-size: 32px 
+	margin: 30px 0 5px; 
+} 
+
+.card span { 
+	color: #fff; 
+	font-size: 1.31rem; 
+
+} 
+
+@media screen and (max-width: 900px) { 
+	.wrapper .carousel { 
+		grid-auto-columns: calc((100% / 2) - 9px); 
+
+	} 
+} 
+
+@media screen and (max-width: 600px) { 
+	.wrapper .carousel { 
+		grid-auto-columns: 100%; 
+
+	} 
+}
+
+        </style>
         
 <!--
 
@@ -53,11 +183,11 @@ https://templatemo.com/tm-583-festava-live
 
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index">
                         Festava Live
                     </a>
 
-                    <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+                    <a href="ticket" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
     
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -90,7 +220,7 @@ https://templatemo.com/tm-583-festava-live
                             </li>
                         </ul>
 
-                        <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Buy Ticket</a>
+                        <a href="ticket" class="btn custom-btn d-lg-block d-none">Buy Ticket</a>
                     </div>
                 </div>
             </nav>
@@ -318,90 +448,29 @@ https://templatemo.com/tm-583-festava-live
                         <div class="col-12 text-center">
                             <h2 class="text-white mb-4">Event Schedule</h1>
 
-                            <div class="table-responsive">
-                                <table class="schedule-table table table-dark">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Date</th>
-
-                                            <th scope="col">Wednesday</th>
-
-                                            <th scope="col">Thursday</th>
-
-                                            <th scope="col">Friday</th>
-
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Day 1</th>
-
-                                            <td class="table-background-image-wrap pop-background-image">
-                                                <h3>Pop Night</h3>
-
-                                                <p class="mb-2">5:00 - 7:00 PM</p>
-
-                                                <p>By Adele</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-
-                                            <td style="background-color: #F3DCD4"></td>
-
-                                            <td class="table-background-image-wrap rock-background-image">
-                                                <h3>Rock & Roll</h3>
-
-                                                <p class="mb-2">7:00 - 11:00 PM</p>
-
-                                                <p>By Rihana</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">Day 2</th>
-                
-                                            <td style="background-color: #ECC9C7"></td>
-
-                                            <td>
-                                                <h3>DJ Night</h3>
-
-                                                <p class="mb-2">6:30 - 9:30 PM</p>
-
-                                                <p>By Rihana</p>
-                                            </td>
-
-                                            <td style="background-color: #D9E3DA"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">Day 3</th>
-                
-                                            <td class="table-background-image-wrap country-background-image">
-                                                <h3>Country Music</h3>
-
-                                                <p class="mb-2">4:30 - 7:30 PM</p>
-
-                                                <p>By Rihana</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-
-                                            <td style="background-color: #D1CFC0"></td>
-
-                                            <td>
-                                                <h3>Free Styles</h3>
-
-                                                <p class="mb-2">6:00 - 10:00 PM</p>
-
-                                                <p>By Members</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                <div class="wrapper"> 
+                                    
+                                    <i id="left" class="fa-solid  fas fa-angle-left"><</i> 
+                                    <ul class="carousel"> 
+                                        @foreach ($jadwal_konsers as $jadwal)
+                                        <li class="card"> 
+                                            <div class="img">
+                                                <img src="{{ asset('images/poster/' . $jadwal->gambar) }}" alt="" draggable="false"> </div> 
+                                            <h2 style="color: gold; font-weight:bold; margin:0"> 
+                                                  {{$jadwal->nama}} 
+                                              </h2> 
+                                            <h4 style="color: red; font-weight:bold; margin:0"> 
+                                                {{$jadwal->artis}} 
+                                            </h4> 
+                                            <span>{{$jadwal->tanggal_konser}}</span>
+                                            <span>{{$jadwal->waktu_mulai}}</span>
+                                            <span>Rp{{$jadwal->harga}}</span> 
+                                            <a href="ticket" class="btn custom-btn">Buy Ticket</a>
+                                        </li> 
+                                        @endforeach
+                                    </ul> 
+                                    <i id="right" class="fa-solid fas fa-angle-right"></i> 
+                                </div> 
                         </div>
                     </div>
                 </div>
@@ -438,7 +507,7 @@ https://templatemo.com/tm-583-festava-live
                                     <li class="pricing-list-item">standard content</li>
                                 </ul>
 
-                                <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
+                                <a class="link-fx-1 color-contrast-higher mt-4" href="ticket">
                                     <span>Buy Ticket</span>
                                     <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
                                 </a>
@@ -467,7 +536,7 @@ https://templatemo.com/tm-583-festava-live
                                     <li class="pricing-list-item">live chat support</li>
                                 </ul>
 
-                                <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
+                                <a class="link-fx-1 color-contrast-higher mt-4" href="ticket">
                                     <span>Buy Ticket</span>
                                     <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
                                 </a>
@@ -678,7 +747,89 @@ https://templatemo.com/tm-583-festava-live
 T e m p l a t e M o
 
 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() { 
+	const carousel = document.querySelector(".carousel"); 
+	const arrowBtns = document.querySelectorAll(".wrapper i"); 
+	const wrapper = document.querySelector(".wrapper"); 
 
+	const firstCard = carousel.querySelector(".card"); 
+	const firstCardWidth = firstCard.offsetWidth; 
+
+	let isDragging = false, 
+		startX, 
+		startScrollLeft, 
+		timeoutId; 
+
+	const dragStart = (e) => { 
+		isDragging = true; 
+		carousel.classList.add("dragging"); 
+		startX = e.pageX; 
+		startScrollLeft = carousel.scrollLeft; 
+	}; 
+
+	const dragging = (e) => { 
+		if (!isDragging) return; 
+	
+		// Calculate the new scroll position 
+		const newScrollLeft = startScrollLeft - (e.pageX - startX); 
+	
+		// Check if the new scroll position exceeds 
+		// the carousel boundaries 
+		if (newScrollLeft <= 0 || newScrollLeft >= 
+			carousel.scrollWidth - carousel.offsetWidth) { 
+			
+			// If so, prevent further dragging 
+			isDragging = false; 
+			return; 
+		} 
+	
+		// Otherwise, update the scroll position of the carousel 
+		carousel.scrollLeft = newScrollLeft; 
+	}; 
+
+	const dragStop = () => { 
+		isDragging = false; 
+		carousel.classList.remove("dragging"); 
+	}; 
+
+	const autoPlay = () => { 
+	
+		// Return if window is smaller than 800 
+		if (window.innerWidth < 800) return; 
+		
+		// Calculate the total width of all cards 
+		const totalCardWidth = carousel.scrollWidth; 
+		
+		// Calculate the maximum scroll position 
+		const maxScrollLeft = totalCardWidth - carousel.offsetWidth; 
+		
+		// If the carousel is at the end, stop autoplay 
+		if (carousel.scrollLeft >= maxScrollLeft) return; 
+		
+		// Autoplay the carousel after every 2500ms 
+		timeoutId = setTimeout(() => 
+			carousel.scrollLeft += firstCardWidth, 2500); 
+	}; 
+
+	carousel.addEventListener("mousedown", dragStart); 
+	carousel.addEventListener("mousemove", dragging); 
+	document.addEventListener("mouseup", dragStop); 
+	wrapper.addEventListener("mouseenter", () => 
+		clearTimeout(timeoutId)); 
+	wrapper.addEventListener("mouseleave", autoPlay); 
+
+	// Add event listeners for the arrow buttons to 
+	// scroll the carousel left and right 
+	arrowBtns.forEach(btn => { 
+		btn.addEventListener("click", () => { 
+			carousel.scrollLeft += btn.id === "left" ? 
+				-firstCardWidth : firstCardWidth; 
+		}); 
+	}); 
+}); 
+
+    </script>
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

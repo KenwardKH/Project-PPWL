@@ -12,7 +12,8 @@ class JadwalKonserController extends Controller
      */
     public function index()
     {
-        //
+        $jadwal_konsers = Jadwal_Konser::all();
+        return view('index', compact('jadwal_konsers'));
     }
 
     /**
