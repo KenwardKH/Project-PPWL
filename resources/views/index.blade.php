@@ -218,9 +218,19 @@ https://templatemo.com/tm-583-festava-live
                             <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_6">Contact</a>
                             </li>
+                            @auth
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="btn custom-btn d-lg-block d-none" style="margin: 10px">{{ __('Log Out') }}</button>
+                                </form>
+                            </li>
+                            @else
+                                <li><a href="{{route('login')}}" class="btn custom-btn d-lg-block d-none" style="margin: 10px">Login</a></li>
+                                <li><a href="{{route('register')}}" class="btn custom-btn d-lg-block d-none" style="margin: 10px">Register</a></li>
+                            @endauth
                         </ul>
-
-                        <a href="ticket" class="btn custom-btn d-lg-block d-none">Buy Ticket</a>
+                        
                     </div>
                 </div>
             </nav>
