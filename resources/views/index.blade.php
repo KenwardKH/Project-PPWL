@@ -223,15 +223,14 @@ https://templatemo.com/tm-583-festava-live
                                 <div  class="hidden sm:flex sm:items-center sm:ms-6" x-data="{ open: false }">
                                     <div class="relative">
                                         <button @click="open = !open" style="align-items: center; display: inline-flex; padding: 0.5rem 0.75rem; font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; border-radius: 0.375rem; color: #6B7280; background-color: #FFFFFF; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                                            <div>{{ Auth::user()->name }}</div>
-                                            <div style="margin-left: 0.25rem;">
-                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <div style="display: flex">
+                                                {{ Auth::user()->name }} 
+                                                <svg class="fill-current" style="width:20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                                 </svg>
                                             </div>
                                         </button>
-                                
-                                        <div x-show="open" @click.away="open = false" style="position: absolute; right: 0; margin-top: 0.5rem; width: 12rem; border-radius: 0.375rem; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.05);" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                        <div x-show="open" @click.away="open = false" style="position: absolute; margin-top: 0.5rem; width: 12rem; border-radius: 0.375rem; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.05);" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
                                             <div class="py-1" role="none">
                                                 <a href="{{ route('profile.edit') }}" style="display: block; padding: 0.5rem 1rem; font-size: 0.875rem; line-height: 1.25rem; color: #4B5563; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="menu-item-0">Profile</a>
                                                 <form method="POST" action="{{ route('logout') }}">
@@ -480,7 +479,11 @@ https://templatemo.com/tm-583-festava-live
 
                                 <div class="wrapper"> 
                                     
-                                    <i id="left" class="fa-solid  fas fa-angle-left"><</i> 
+                                    <i id="left">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16" style="top: 10px;height: 30px;width: 30px;right: 10px;position: absolute;">
+                                            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                                          </svg>
+                                    </i> 
                                     <ul class="carousel"> 
                                         @foreach ($jadwal_konsers as $jadwal)
                                         <li class="card"> 
@@ -499,7 +502,12 @@ https://templatemo.com/tm-583-festava-live
                                         </li> 
                                         @endforeach
                                     </ul> 
-                                    <i id="right" class="fa-solid fas fa-angle-right"></i> 
+                                    <i id="right">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16" style="top: 10px;height: 30px;width: 30px;right: 10px;position: absolute;">
+                                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                          </svg>
+                                    </i>
+
                                 </div> 
                         </div>
                     </div>
