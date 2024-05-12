@@ -220,22 +220,30 @@ https://templatemo.com/tm-583-festava-live
                             </li>
                             @auth
                             <li>
-                                <div class="hidden sm:flex sm:items-center sm:ms-6" x-data="{ open: false }">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" @click="open = !open" aria-expanded="false">
-                                            {{ Auth::user()->name }}
+                                <div  class="hidden sm:flex sm:items-center sm:ms-6" x-data="{ open: false }">
+                                    <div class="relative">
+                                        <button @click="open = !open" style="align-items: center; display: inline-flex; padding: 0.5rem 0.75rem; font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; border-radius: 0.375rem; color: #6B7280; background-color: #FFFFFF; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                                            <div>{{ Auth::user()->name }}</div>
+                                            <div style="margin-left: 0.25rem;">
+                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
                                         </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-show="open" @click.away="open = false">
-                                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
-                                            <li>
+                                
+                                        <div x-show="open" @click.away="open = false" style="position: absolute; right: 0; margin-top: 0.5rem; width: 12rem; border-radius: 0.375rem; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.05);" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                            <div class="py-1" role="none">
+                                                <a href="{{ route('profile.edit') }}" style="display: block; padding: 0.5rem 1rem; font-size: 0.875rem; line-height: 1.25rem; color: #4B5563; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="menu-item-0">Profile</a>
                                                 <form method="POST" action="{{ route('logout') }}">
                                                     @csrf
-                                                    <button type="submit" class="dropdown-item">Log Out</button>
+                                                    <button type="submit" style="display: block; width: 100%; padding: 0.5rem 1rem; font-size: 0.875rem; line-height: 1.25rem; text-align: left; color: #4B5563; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;" class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100" role="menuitem" tabindex="-1" id="menu-item-1">Log Out</button>
                                                 </form>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>                    
+                                </div>
+                                
+                                             
                             </li>
                             @else
                                 <li><a href="{{route('login')}}" class="btn custom-btn d-lg-block d-none" style="margin: 10px">Login</a></li>
@@ -859,7 +867,5 @@ T e m p l a t e M o
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
