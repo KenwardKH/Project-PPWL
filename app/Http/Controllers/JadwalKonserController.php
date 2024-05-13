@@ -66,6 +66,11 @@ class JadwalKonserController extends Controller
         $jadwal_konsers = Jadwal_Konser::all();
         return view('jadwal_konser', compact('jadwal_konsers'));
     }
+    public function tiket(string $id)
+    {
+        $jadwal = Jadwal_Konser::find($id);
+        return view('ticket', compact('jadwal'));
+    }
 
     /**
      * Show the form for editing the specified resource.

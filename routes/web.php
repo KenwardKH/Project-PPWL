@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\JadwalKonserController;
+use App\Http\Controllers\TicketController;
 
 Route::get('/', [JadwalKonserController::class, 'index'])->name('index');
 Route::get('/ticket', function () {
@@ -33,4 +34,8 @@ Route::post('/add_jadwal_konser',[JadwalKonserController::class, 'store']);
 Route::get('/edit_jadwal_konser/{id}', [JadwalKonserController::class, 'edit'])->name('edit_jadwal_konser');
 Route::post('/update-jadwal_konser', [JadwalKonserController::class, 'update'])->name('update-jadwal_konser');
 Route::delete('/delete-jadwal_konser/{id}', [JadwalKonserController::class, 'destroy'])->name('delete-jadwal_konser');
+
+Route::get('/ticket/{id}', [JadwalKonserController::class, 'tiket'])->name('beli_tiket');
+
+Route::post('/ticket', [TicketController::class, 'store'])->name('submit_ticket');
 require __DIR__.'/auth.php';

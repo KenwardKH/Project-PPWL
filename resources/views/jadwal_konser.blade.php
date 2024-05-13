@@ -26,6 +26,9 @@
             display: flex;
             justify-content: space-between
         }
+        img {
+            width: 400px
+        }
     </style>
 
     <div class="py-12">
