@@ -89,6 +89,7 @@ https://templatemo.com/tm-583-festava-live
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/#section_6">Contact</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/ticket_list">My Tickets</a>
                         </li>
@@ -152,34 +153,40 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-6 col-10 mx-auto">
-                        <form class="custom-form ticket-form mb-5 mb-lg-0" action="{{ route('submit_ticket') }}"
-                            method="post">
-                            @csrf
-                            <h2 class="text-center mb-4"><img style="width: 50%; max-width:500px"
-                                    src="{{ asset('images/poster/' . $jadwal->gambar) }}" alt=""></h2>
-                            <div class="ticket-form-body">
-                                <div class="row">
-                                    <input type="text" name="nama_acara" class="form-control"
-                                        placeholder="Number of Tickets" value="{{ $jadwal->nama }}" hidden required>
-                                    <input type="email" name="email" pattern="[^ @]*@[^ @]*" value="{{ Auth::user()->email }}"
-                                        class="form-control" placeholder="Email address" hidden required>
-                                </div>
-                                <input type="text" name="nama" class="form-control"
-                                            placeholder="Full name" required>
-                                <input type="tel" class="form-control" name="nomor_hp"
-                                    placeholder="Ph 857-4563-7890" pattern="[0-9]{3}[0-9]{4}[0-9]{4}" required>
-
-                                <input type="number" name="jumlah" class="form-control"
-                                    placeholder="Number of Tickets" required>
-
-                                <textarea name="additional" rows="3" class="form-control" id="ticket-form-message"
-                                    placeholder="Additional Request"></textarea>
-
-                                <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                    <button type="submit" class="form-control">Buy Ticket</button>
-                                </div>
-                            </div>
-                        </form>
+                        <table class="table-auto w-full custom-form ticket-form mb-5 mb-lg-0">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-2">ID</th>
+                                    <th class="px-4 py-2">Nama Acara</th>
+                                    <th class="px-4 py-2">Nama Pemesan</th>
+                                    <th class="px-4 py-2">Email</th>
+                                    <th class="px-4 py-2">Jumlah</th>
+                                    <th class="px-4 py-2">Additional</th>
+                                    <th class="px-4 py-2">Tanggal Pemesanan</th>
+                                    <th class="px-4 py-2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($ticket->where('email', Auth::user()->email) as $tickets)
+                                    <tr>
+                                        <td class="border px-4 py-2">{{ $tickets->id }}</td>
+                                        <td class="border px-4 py-2">{{ $tickets->nama_acara }}</td>
+                                        <td class="border px-4 py-2">{{ $tickets->nama }}</td>
+                                        <td class="border px-4 py-2">{{ $tickets->email }}</td>
+                                        <td class="border px-4 py-2">{{ $tickets->jumlah }}</td>
+                                        <td class="border px-4 py-2">{{ $tickets->additional }}</td>
+                                        <td class="border px-4 py-2">{{ $tickets->created_at }}</td>
+                                        <td class="border px-4 py-2">
+                                            @if ($tickets->sudah_dibayar == 'Sudah')
+                                                Sudah Dibayar
+                                            @else
+                                            <a href="{{ route('bayar', ['id' => $tickets->id]) }}">Belum Dibayar</a>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
         </section>

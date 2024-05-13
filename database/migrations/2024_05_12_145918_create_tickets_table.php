@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nomor_hp')->nullable();
             $table->unsignedInteger('jumlah')->default(0);
             $table->string('additional')->nullable();
+            $table->enum('sudah_dibayar', ['Belum', 'Sudah'])->default('Belum');
             $table->timestamps();
         });
     }

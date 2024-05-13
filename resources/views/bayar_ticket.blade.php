@@ -89,6 +89,11 @@ https://templatemo.com/tm-583-festava-live
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/#section_6">Contact</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/ticket_list">My Tickets</a>
+                        </li>
+                        
                         @auth
                             <li>
                                 <div class="hidden sm:flex sm:items-center sm:ms-6" x-data="{ open: false }">
@@ -152,6 +157,11 @@ https://templatemo.com/tm-583-festava-live
                             method="post">
                             @csrf
                             <div class="ticket-form-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        Nama Acara : {{$nama_acara}}
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         Full Name  : {{$nama}}

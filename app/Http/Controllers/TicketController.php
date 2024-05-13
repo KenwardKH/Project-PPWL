@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Models\Jadwal_Konser;
+use Illuminate\Support\Facades\Redirect;
 
 class TicketController extends Controller
 {
@@ -15,6 +16,11 @@ class TicketController extends Controller
     {
         $ticket = Ticket::all();
         return view('ticket', compact('ticket'));
+    }
+    public function ticket_list()
+    {
+        $ticket = Ticket::all();
+        return view('ticket_list', ['ticket' => $ticket]);
     }
 
     /**
@@ -57,6 +63,25 @@ class TicketController extends Controller
         $jadwal = Jadwal_Konser::where('nama', $nama_acara)->first();
         $total_harga = $jumlah * $jadwal->harga;
         return view('bayar_ticket', compact('nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional','total_harga'));
+    }
+    
+    public function bayar($id)
+    {   
+        // Ambil data tiket berdasarkan ID
+        $tiket = Ticket::find($id);
+
+        $nama_acara = $tiket->nama_acara;
+        $nama = $tiket->nama;
+        $email = $tiket->email;
+        $nomor_hp = $tiket->nomor_hp;
+        $jumlah = $tiket->jumlah;
+        $additional = $tiket->additional;
+
+        $jadwal = Jadwal_Konser::where('nama', $tiket->nama_acara)->first();
+
+        $total_harga = $jumlah * $jadwal->harga;
+
+        return view('bayar_ticket', compact('nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional', 'total_harga'));
     }
 
     /**

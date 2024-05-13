@@ -218,6 +218,11 @@ https://templatemo.com/tm-583-festava-live
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_6">Contact</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/ticket_list">My Tickets</a>
+                        </li>
+                        
                         @auth
                             <li>
                                 <div class="hidden sm:flex sm:items-center sm:ms-6" x-data="{ open: false }">
