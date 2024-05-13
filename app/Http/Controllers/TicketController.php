@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ticket;
+use App\Models\Jadwal_Konser;
 
 class TicketController extends Controller
 {
@@ -45,8 +46,17 @@ class TicketController extends Controller
             'jumlah' => $validation['jumlah'],
             'additional' => $request->input('additional'),
         ]);
-
-        return redirect('/');
+        
+        
+        $nama_acara = $tiket->nama_acara;
+        $nama = $tiket->nama;
+        $email = $tiket->email;
+        $nomor_hp = $tiket->nomor_hp;
+        $jumlah = $tiket->jumlah;
+        $additional = $tiket->additional;
+        $jadwal = Jadwal_Konser::where('nama', $nama_acara)->first();
+        $total_harga = $jumlah * $jadwal->harga;
+        return view('bayar_ticket', compact('nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional','total_harga'));
     }
 
     /**

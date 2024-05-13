@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->string('nama_acara')->nullblade();
-            $table->string('nama')->unique();
+            $table->string('nama')->nullable();
             $table->string('email')->nullable();
             $table->string('nomor_hp')->nullable();
             $table->unsignedInteger('jumlah')->default(0);

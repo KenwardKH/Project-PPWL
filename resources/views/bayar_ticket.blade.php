@@ -151,36 +151,40 @@ https://templatemo.com/tm-583-festava-live
                         <form class="custom-form ticket-form mb-5 mb-lg-0" action="{{ route('submit_ticket') }}"
                             method="post">
                             @csrf
-                            <h2 class="text-center mb-4"><img style="width: 50%; max-width:500px"
-                                    src="{{ asset('images/poster/' . $jadwal->gambar) }}" alt=""></h2>
                             <div class="ticket-form-body">
                                 <div class="row">
-
-                                    <input type="text" name="nama_acara" class="form-control"
-                                        placeholder="Number of Tickets" value="{{ $jadwal->nama }}" hidden required>
-
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="nama" class="form-control"
-                                            placeholder="Full name" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="email" name="email" pattern="[^ @]*@[^ @]*" value="{{ Auth::user()->email }}"
-                                            class="form-control" placeholder="Email address" required>
+                                        Full Name  : {{$nama}}
                                     </div>
                                 </div>
-
-                                <input type="tel" class="form-control" name="nomor_hp"
-                                    placeholder="Ph 857-4563-7890" pattern="[0-9]{3}[0-9]{4}[0-9]{4}" required>
-
-                                <input type="number" name="jumlah" class="form-control"
-                                    placeholder="Number of Tickets" required>
-
-                                <textarea name="additional" rows="3" class="form-control" id="ticket-form-message"
-                                    placeholder="Additional Request"></textarea>
-
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        Email  : {{$email}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        Full Name  : {{$nomor_hp}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        Number of Ticket  : {{$jumlah}}
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        Total Price : Rp {{ number_format($total_harga, 0, ',', '.') }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    Silahkan Input Bukti Transfer
+                                    <input type="File" name="bukti_trf" accept="images" accept="image/png, image/jpeg, image/jpg"
+                                        class="form-control" placeholder="Email address" required>
+                                </div>
                                 <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                    <button type="submit" class="form-control">Buy Ticket</button>
+                                    <button type="submit" class="form-control">Submit</button>
                                 </div>
                             </div>
                         </form>

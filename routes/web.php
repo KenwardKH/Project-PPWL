@@ -10,7 +10,6 @@ Route::get('/', [JadwalKonserController::class, 'index'])->name('index');
 Route::get('/ticket', function () {
     return view('ticket');
 });
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

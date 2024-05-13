@@ -25,7 +25,7 @@
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
                                             autocomplete="off">
                                         Gambar Poster
-                                        <input type="file" placeholder="Gambar Poster" name="gambar"
+                                        <input type="file" placeholder="Gambar Poster" name="gambar" accept="image/png, image/jpeg, image/jpg"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
                                             autocomplete="off">
                                         Artis/Band
