@@ -22,6 +22,11 @@ class TicketController extends Controller
         $ticket = Ticket::all();
         return view('ticket_list', ['ticket' => $ticket]);
     }
+    public function ticket_list_admin()
+    {
+        $ticket = Ticket::all();
+        return view('ticket_list_admin', ['ticket' => $ticket]);
+    }
 
     /**
      * Show the form for creating a new resource.

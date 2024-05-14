@@ -22,6 +22,12 @@
                         {{ __('Jadwal Konser') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('ticket_list_admin')" :active="request()->routeIs('ticket_list_admin')">
+                        {{ __('Ticket List') }}
+                    </x-nav-link>
+                </div>
+                
                 @endif
 
             </div>

@@ -188,9 +188,13 @@ https://templatemo.com/tm-583-festava-live
                                             @endif
                                         </td>
                                         <td class="border px-4 py-2">
-                                            <image src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}" alt="" width='200px'>
+                                            <img src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}" alt="" width="200px" onclick="openModal('imageModal{{$tickets->id}}')">
                                         </td>
                                     </tr>
+                                    <div id="imageModal{{$tickets->id}}" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+                                        <span class="close" style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s;" onclick="closeModal('imageModal{{$tickets->id}}')">&times;</span>
+                                        <img class="modal-content" src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}" style="margin: auto; display: block; width: 80%; max-width: 700px;">
+                                    </div>
                                 @endforeach
                             </tbody>
                         </table>
@@ -349,12 +353,32 @@ T e m p l a t e M o
 
 -->
     <!-- JAVASCRIPT FILES -->
+
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/jquery.sticky.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <script>
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "block";
+            } else {
+                console.error("Modal with ID '" + modalId + "' not found.");
+            }
+        }
+
+    
+        function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+    } else {
+        console.error("Modal with ID '" + modalId + "' not found.");
+    }
+}
+    </script>
 </body>
 
 </html>
