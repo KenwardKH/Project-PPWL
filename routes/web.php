@@ -11,6 +11,7 @@ Route::get('/ticket', function () {
     return view('ticket');
 });
 Route::get('/bayar/{id}', [TicketController::class, 'bayar'])->name('bayar');
+
 Route::get('/ticket_list', [TicketController::class, 'ticket_list'])->name('ticket_list');
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -39,4 +40,5 @@ Route::delete('/delete-jadwal_konser/{id}', [JadwalKonserController::class, 'des
 Route::get('/ticket/{id}', [JadwalKonserController::class, 'tiket'])->name('beli_tiket');
 
 Route::post('/ticket', [TicketController::class, 'store'])->name('submit_ticket');
+Route::post('/submit_bukti_trf/{id}', [TicketController::class, 'update'])->name('submit_bukti_trf');
 require __DIR__.'/auth.php';

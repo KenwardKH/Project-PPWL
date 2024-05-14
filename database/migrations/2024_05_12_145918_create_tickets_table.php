@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('additional')->nullable();
             $table->enum('sudah_dibayar', ['Belum', 'Sudah'])->default('Belum');
             $table->timestamps();
+            $table->string('bukti_trf')->nullable();
         });
     }
 

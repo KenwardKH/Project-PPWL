@@ -53,7 +53,7 @@ class TicketController extends Controller
             'additional' => $request->input('additional'),
         ]);
         
-        
+        $id = $tiket->id;
         $nama_acara = $tiket->nama_acara;
         $nama = $tiket->nama;
         $email = $tiket->email;
@@ -62,14 +62,13 @@ class TicketController extends Controller
         $additional = $tiket->additional;
         $jadwal = Jadwal_Konser::where('nama', $nama_acara)->first();
         $total_harga = $jumlah * $jadwal->harga;
-        return view('bayar_ticket', compact('nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional','total_harga'));
+        return view('bayar_ticket', compact('id', 'nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional','total_harga'));
     }
     
     public function bayar($id)
     {   
         // Ambil data tiket berdasarkan ID
         $tiket = Ticket::find($id);
-
         $nama_acara = $tiket->nama_acara;
         $nama = $tiket->nama;
         $email = $tiket->email;
@@ -81,7 +80,7 @@ class TicketController extends Controller
 
         $total_harga = $jumlah * $jadwal->harga;
 
-        return view('bayar_ticket', compact('nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional', 'total_harga'));
+        return view('bayar_ticket', compact('id','nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional', 'total_harga'));
     }
 
     /**
@@ -103,9 +102,22 @@ class TicketController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'bukti_trf' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $image = $request->file('bukti_trf');
+        $imageName = $image->getClientOriginalName();
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        $image->move(public_path('images/bukti_trf'), $imageName);
+
+        Ticket::where('id', $request->id)->update([
+            'bukti_trf' => $imageName,
+        ]);
+
+        return redirect('/ticket_list');
     }
 
     /**

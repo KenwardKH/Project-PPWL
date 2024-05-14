@@ -152,7 +152,7 @@ https://templatemo.com/tm-583-festava-live
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-6 col-10 mx-auto">
+                    <div class="col-lg-6 col-10">
                         <table class="table-auto w-full custom-form ticket-form mb-5 mb-lg-0">
                             <thead>
                                 <tr>
@@ -164,6 +164,7 @@ https://templatemo.com/tm-583-festava-live
                                     <th class="px-4 py-2">Additional</th>
                                     <th class="px-4 py-2">Tanggal Pemesanan</th>
                                     <th class="px-4 py-2">Status</th>
+                                    <th class="px-4 py-2">Bukti Transfer</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -179,9 +180,15 @@ https://templatemo.com/tm-583-festava-live
                                         <td class="border px-4 py-2">
                                             @if ($tickets->sudah_dibayar == 'Sudah')
                                                 Sudah Dibayar
+                                            
+                                            @elseif($tickets->bukti_trf == NULL)
+                                                <a href="{{ route('bayar', ['id' => $tickets->id]) }}">Belum Dibayar</a>
                                             @else
-                                            <a href="{{ route('bayar', ['id' => $tickets->id]) }}">Belum Dibayar</a>
+                                                Menunggu Konfirmasi
                                             @endif
+                                        </td>
+                                        <td class="border px-4 py-2">
+                                            <image src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}" alt="" width='200px'>
                                         </td>
                                     </tr>
                                 @endforeach

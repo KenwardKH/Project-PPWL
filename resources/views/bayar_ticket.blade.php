@@ -153,36 +153,34 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-6 col-10 mx-auto">
-                        <form class="custom-form ticket-form mb-5 mb-lg-0" action="{{ route('submit_ticket') }}"
-                            method="post">
+                        <form class="custom-form ticket-form mb-5 mb-lg-0" action="{{ route('submit_bukti_trf', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="ticket-form-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        Nama Acara : {{$nama_acara}}
+                                        Nama Acara : {{ $nama_acara }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        Full Name  : {{$nama}}
+                                        Full Name  : {{ $nama }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        Email  : {{$email}}
+                                        Email  : {{ $email }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        Full Name  : {{$nomor_hp}}
+                                        Nomor HP  : {{ $nomor_hp }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        Number of Ticket  : {{$jumlah}}
+                                        Number of Ticket  : {{ $jumlah }}
                                     </div>
                                 </div>
-                                
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         Total Price : Rp {{ number_format($total_harga, 0, ',', '.') }}
@@ -190,8 +188,7 @@ https://templatemo.com/tm-583-festava-live
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     Silahkan Input Bukti Transfer
-                                    <input type="File" name="bukti_trf" accept="images" accept="image/png, image/jpeg, image/jpg"
-                                        class="form-control" placeholder="Email address" required>
+                                    <input type="file" name="bukti_trf" accept="image/png, image/jpeg, image/jpg" class="form-control" required>
                                 </div>
                                 <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                     <button type="submit" class="form-control">Submit</button>
