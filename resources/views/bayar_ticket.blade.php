@@ -186,6 +186,16 @@ https://templatemo.com/tm-583-festava-live
                                         Total Price : Rp {{ number_format($total_harga, 0, ',', '.') }}
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        Pembayaran Dapat Melalui : <img src="{{ asset('images/winpay-qris-ewallet.png')}}" style="width: 50vh" alt="transfer">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        Transfer Ke Nomor : 0812345678
+                                    </div>
+                                </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     Silahkan Input Bukti Transfer
                                     <input type="file" name="bukti_trf" accept="image/png, image/jpeg, image/jpg" class="form-control" required>

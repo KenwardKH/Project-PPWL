@@ -32,12 +32,26 @@ class JadwalKonserSeeder extends Seeder
             "id" => 2,
             "nama" => 'Music Time',
             "gambar" => 'download.jpg',
-            "artis" => 'Kanabob',
+            "artis" => 'Kanabon',
             "harga" => 200000,
             "tanggal_konser" => '2024-08-4',
             "waktu_mulai" => '13:00:00',
             "waktu_berakhir" => '15:00:00',
             "lokasi" => 'Regale',
+            "created_at" => now(),
+            "updated_at" => now()
+        ]);
+
+        DB::table('jadwal_konsers')->insert([
+            "id" => 3,
+            "nama" => 'The Nights',
+            "gambar" => 'music.jpg',
+            "artis" => 'Eminem',
+            "harga" => 240000,
+            "tanggal_konser" => '2024-12-14',
+            "waktu_mulai" => '19:00:00',
+            "waktu_berakhir" => '22:00:00',
+            "lokasi" => 'Gedung Auditorium USU',
             "created_at" => now(),
             "updated_at" => now()
         ]);

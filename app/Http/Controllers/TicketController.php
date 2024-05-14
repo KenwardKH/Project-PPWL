@@ -88,6 +88,14 @@ class TicketController extends Controller
         return view('bayar_ticket', compact('id','nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional', 'total_harga'));
     }
 
+    public function ubah_status($id){
+        $ticket = Ticket::find($id);
+        $ticket->sudah_dibayar = 'Sudah';
+        $ticket->save();
+        $ticket = Ticket::all();
+        return view('ticket_list_admin', ['ticket' => $ticket]);
+    }
+
     /**
      * Display the specified resource.
      */
@@ -130,6 +138,7 @@ class TicketController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Ticket::find($id)->delete();
+        return redirect('/ticket_list_admin');
     }
 }

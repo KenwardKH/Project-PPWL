@@ -41,4 +41,8 @@ Route::get('/ticket/{id}', [JadwalKonserController::class, 'tiket'])->name('beli
 Route::get('/ticket_list_admin', [TicketController::class, 'ticket_list_admin'])->name('ticket_list_admin')->middleware('auth');
 Route::post('/ticket', [TicketController::class, 'store'])->name('submit_ticket');
 Route::post('/submit_bukti_trf/{id}', [TicketController::class, 'update'])->name('submit_bukti_trf');
+
+Route::post('/ticket_list_admin/ubah_status/{id}', [TicketController::class, 'ubah_status'])->name('ubah_status');
+Route::delete('/ticket_list_admin/delete/{id}', [TicketController::class, 'destroy'])->name('delete_ticket_status');
+
 require __DIR__.'/auth.php';
