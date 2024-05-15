@@ -8,6 +8,8 @@
     <style>
         .py-12 .max-w-7xl {
             max-width: 100%;
+            display: flex;
+            justify-content: center
         }
         tbody tr td button{
             padding: 10px;
