@@ -76,12 +76,17 @@
                                                     style="margin: auto; display: block; width: 80%; max-width: 700px;">
                                             </div>
                                             <td class="border px-4 py-2">
-                                                <form action="{{ route('ubah_status', ['id' => $tickets->id]) }}"
+                                                @if($tickets->bukti_trf == NULL)
+
+                                                @else
+                                                    <form action="{{ route('ubah_status', ['id' => $tickets->id]) }}"
                                                     method="POST">
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{ $tickets->id }}">
                                                     <button type="submit">Konfirmasi</button>
-                                                </form>
+                                                    </form>
+                                                @endif
+                                                
                                             </td>
                                             <td class="border px-4 py-2">
                                                 <form action="{{route('delete_ticket_status',['id' => $tickets->id])}}" method="POST">

@@ -69,7 +69,7 @@
                                             <td class="border px-4 py-2">{{ $jadwal->nama }}</td>
                                             <td class="border px-4 py-2"><img src="{{ asset('images/poster/' . $jadwal->gambar) }}" alt="gambar"></td>
                                             <td class="border px-4 py-2">{{ $jadwal->artis }}</td>
-                                            <td class="border px-4 py-2">{{ $jadwal->harga }}</td>
+                                            <td class="border px-4 py-2">Rp{{ number_format($jadwal->harga, 0, ',', '.') }}</td>
                                             <td class="border px-4 py-2">{{ $jadwal->tanggal_konser }}</td>
                                             <td class="border px-4 py-2">{{ $jadwal->waktu_mulai }}</td>
                                             <td class="border px-4 py-2">{{ $jadwal->waktu_berakhir }}</td>
