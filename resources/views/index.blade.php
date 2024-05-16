@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Festava Live - Bootstrap 5 CSS Template</title>
+    <title>ConHub Tickets</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -171,7 +171,7 @@ https://templatemo.com/tm-583-festava-live
                     <div class="col-lg-12 col-12 d-flex flex-wrap">
                         <p class="d-flex me-4 mb-0">
                             <i class="bi-person custom-icon me-2"></i>
-                            <strong class="text-dark">Welcome to Music Festival 2023</strong>
+                            <strong class="text-dark">Welcum to Live Concert 2024</strong>
                         </p>
                     </div>
 
@@ -182,9 +182,13 @@ https://templatemo.com/tm-583-festava-live
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="/">
-                    Festava Live
-                </a>
+                {{-- <a class="navbar-brand" href="/">
+                    ConHub
+                </a> --}}
+
+                <div height="20px" width="20px">
+                    <img src="images\logo.png">
+                </div>
 
                 <a href="ticket" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
 
@@ -281,22 +285,14 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-12 mt-auto mb-5 text-center">
-                        <small>Festava Live Presents</small>
+                        <small>ConHub Live Presents</small>
 
-                        <h1 class="text-white mb-5">Night Live 2023</h1>
+                        <h1 class="text-white mb-5">Live Concert 2024</h1>
 
                         <a class="btn custom-btn smoothscroll" href="#section_2">Let's begin</a>
                     </div>
 
-                    <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
-                        <div class="date-wrap">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-clock me-2"></i>
-                                10 - 12<sup>th</sup>, Dec 2023
-                            </h5>
-                        </div>
-
-                        <div class="location-wrap mx-auto py-3 py-lg-0">
+                        {{-- <div class="location-wrap mx-auto py-3 py-lg-0">
                             <h5 class="text-white">
                                 <i class="custom-icon bi-geo-alt me-2"></i>
                                 National Center, United States
@@ -325,14 +321,14 @@ https://templatemo.com/tm-583-festava-live
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
 
             <div class="video-wrap">
                 <video autoplay="" loop="" muted="" class="custom-video" poster="">
-                    <source src="video/pexels-2022395.mp4" type="video/mp4">
+                    <source src="video/Rifa.mp4" type="video/mp4">
 
                     Your browser does not support the video tag.
                 </video>
@@ -346,26 +342,23 @@ https://templatemo.com/tm-583-festava-live
 
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                         <div class="services-info">
-                            <h2 class="text-white mb-4">About Festava 2022</h2>
+                            <h2 class="text-white mb-4">Tentang ConHub</h2>
 
-                            <p class="text-white">Festava Live is free CSS template provided by TemplateMo website.
-                                This layout is built on Bootstrap v5.2.2 CSS library. You are free to use this template
-                                for your commercial website.</p>
+                            <p class="text-white">ConHub (Consert Hub) adalah platform online untuk membeli tiket konser spesifik dalam Live Concert 2024, menawarkan pengalaman baru dengan special guest yaitu artis-artis ternama / populer dengan harga tiket yang terjangkau.</p>
 
-                            <h6 class="text-white mt-4">Once in Lifetime Experience</h6>
+                            {{-- <h6 class="text-white mt-4">Once in Lifetime Experience</h6>
 
-                            <p class="text-white">You are not allowed to redistribute the template ZIP file on any
-                                other website without a permission.</p>
+                            <p class="text-white">You can only expereince tits only once in your life outside from Only Fans.</p> --}}
 
-                            <h6 class="text-white mt-4">Whole Night Party</h6>
+                            <h6 class="text-white mt-4">Pesta Sepanjang Waktu</h6>
 
-                            <p class="text-white">Please tell your friends about our website. Thank you.</p>
+                            <p class="text-white">Semoga konser-konser yang kami tawarkan ini akan menjadi pengalaman baru yang tak akan terlupakan</p>
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-12">
                         <div class="about-text-wrap">
-                            <img src="images/pexels-alexander-suhorucov-6457579.jpg" class="about-image img-fluid">
+                            <img src="images/TesRif1.jpg" class="about-image img-fluid">
 
                             <div class="about-text-info d-flex">
                                 <div class="d-flex">
@@ -374,9 +367,9 @@ https://templatemo.com/tm-583-festava-live
 
 
                                 <div class="ms-4">
-                                    <h3>a happy moment</h3>
+                                    <h3>Kenangan yang menyenangkan</h3>
 
-                                    <p class="mb-0">your amazing festival experience with us</p>
+                                    <p class="mb-0">Rasakan momen festival yang luar biasa bersama kami</p>
                                 </div>
                             </div>
                         </div>
@@ -392,37 +385,37 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row justify-content-center">
 
                     <div class="col-12 text-center">
-                        <h2 class="mb-4">Meet Artists</h1>
+                        <h2 class="mb-4">Special Guests</h1>
                     </div>
 
                     <div class="col-lg-5 col-12">
                         <div class="artists-thumb">
                             <div class="artists-image-wrap">
-                                <img src="images/artists/joecalih-UmTZqmMvQcw-unsplash.jpg"
+                                <img src="images/artists/Eminem2.jpg"
                                     class="artists-image img-fluid">
                             </div>
 
                             <div class="artists-hover">
                                 <p>
                                     <strong>Name:</strong>
-                                    Madona
+                                    Eminem
                                 </p>
 
                                 <p>
-                                    <strong>Birthdate:</strong>
-                                    August 16, 1958
+                                    <strong>Debut:</strong>
+                                    1988
                                 </p>
 
                                 <p>
                                     <strong>Music:</strong>
-                                    Pop, R&amp;B
+                                    Rap / Hip-Hop
                                 </p>
 
                                 <hr>
 
                                 <p class="mb-0">
                                     <strong>Youtube Channel:</strong>
-                                    <a href="#">Madona Official</a>
+                                    <a href="https://www.youtube.com/channel/UCfM3zsQsOnfWNUppiycmBuw">EminemMusic</a>
                                 </p>
                             </div>
                         </div>
@@ -431,48 +424,48 @@ https://templatemo.com/tm-583-festava-live
                     <div class="col-lg-5 col-12">
                         <div class="artists-thumb">
                             <div class="artists-image-wrap">
-                                <img src="images/artists/abstral-official-bdlMO9z5yco-unsplash.jpg"
+                                <img src="images/artists/BabyMetal2.jpg"
                                     class="artists-image img-fluid">
                             </div>
 
                             <div class="artists-hover">
                                 <p>
                                     <strong>Name:</strong>
-                                    Rihana
+                                    Baby Metal
                                 </p>
 
                                 <p>
-                                    <strong>Birthdate:</strong>
-                                    Feb 20, 1988
+                                    <strong>Debut:</strong>
+                                    2010
                                 </p>
 
                                 <p>
                                     <strong>Music:</strong>
-                                    Country
+                                    Metal
                                 </p>
 
                                 <hr>
 
                                 <p class="mb-0">
                                     <strong>Youtube Channel:</strong>
-                                    <a href="#">Rihana Official</a>
+                                    <a href="https://www.youtube.com/@BABYMETAL">BABYMETAL</a>
                                 </p>
                             </div>
                         </div>
 
                         <div class="artists-thumb">
-                            <img src="images/artists/soundtrap-rAT6FJ6wltE-unsplash.jpg"
+                            <img src="images/artists/Raisa1.jpg"
                                 class="artists-image img-fluid">
 
                             <div class="artists-hover">
                                 <p>
                                     <strong>Name:</strong>
-                                    Bruno Bros
+                                    Raisa
                                 </p>
 
                                 <p>
-                                    <strong>Birthdate:</strong>
-                                    October 8, 1985
+                                    <strong>Debut:</strong>
+                                    2010
                                 </p>
 
                                 <p>
@@ -484,12 +477,11 @@ https://templatemo.com/tm-583-festava-live
 
                                 <p class="mb-0">
                                     <strong>Youtube Channel:</strong>
-                                    <a href="#">Bruno Official</a>
+                                    <a href="https://www.youtube.com/channel/UC8xcPPVYvUxv1CPoEcqj4fQ">raisa6690</a>
                                 </p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -552,93 +544,7 @@ https://templatemo.com/tm-583-festava-live
                 </div>
             </div>
         </section>
-
-
-        <section class="pricing-section section-padding section-bg" id="section_5">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4">Plans, you' love</h2>
-                    </div>
-
-                    <div class="col-lg-6 col-12">
-                        <div class="pricing-thumb">
-                            <div class="d-flex">
-                                <div>
-                                    <h3><small>Early Bird</small> $120</h3>
-
-                                    <p>Including good things:</p>
-                                </div>
-
-                                <p class="pricing-tag ms-auto">Save up to <span>50%</span></h2>
-                            </div>
-
-                            <ul class="pricing-list mt-3">
-                                <li class="pricing-list-item">platform for potential customers</li>
-
-                                <li class="pricing-list-item">digital experience</li>
-
-                                <li class="pricing-list-item">high-quality sound</li>
-
-                                <li class="pricing-list-item">standard content</li>
-                            </ul>
-
-                            <a class="link-fx-1 color-contrast-higher mt-4" href="ticket">
-                                <span>Buy Ticket</span>
-                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                                    <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <circle cx="16" cy="16" r="15.5"></circle>
-                                        <line x1="10" y1="18" x2="16" y2="12"></line>
-                                        <line x1="16" y1="12" x2="22" y2="18"></line>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-12 mt-4 mt-lg-0">
-                        <div class="pricing-thumb">
-                            <div class="d-flex">
-                                <div>
-                                    <h3><small>Standard</small> $240</h3>
-
-                                    <p>What makes a premium festava?</p>
-                                </div>
-                            </div>
-
-                            <ul class="pricing-list mt-3">
-                                <li class="pricing-list-item">platform for potential customers</li>
-
-                                <li class="pricing-list-item">digital experience</li>
-
-                                <li class="pricing-list-item">high-quality sound</li>
-
-                                <li class="pricing-list-item">premium content</li>
-
-                                <li class="pricing-list-item">live chat support</li>
-                            </ul>
-
-                            <a class="link-fx-1 color-contrast-higher mt-4" href="ticket">
-                                <span>Buy Ticket</span>
-                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                                    <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <circle cx="16" cy="16" r="15.5"></circle>
-                                        <line x1="10" y1="18" x2="16" y2="12"></line>
-                                        <line x1="16" y1="12" x2="22" y2="18"></line>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
+        
         <section class="contact-section section-padding" id="section_6">
             @auth
                 <div class="container">
@@ -778,7 +684,7 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-6 col-12">
-                        <h2 class="text-white mb-lg-0">Festava Live</h2>
+                        <h2 class="text-white mb-lg-0">ConHub</h2>
                     </div>
 
                     <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
@@ -842,10 +748,6 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
                             <a href="#" class="site-footer-link">Contact</a>
                         </li>
                     </ul>
@@ -871,9 +773,9 @@ https://templatemo.com/tm-583-festava-live
                     <h5 class="site-footer-title mb-3">Location</h5>
 
                     <p class="text-white d-flex mt-3 mb-2">
-                        Silang Junction South, Tagaytay, Cavite, Philippines</p>
+                        Jalan Dr. T. Mansur No.9, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</p>
 
-                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="https://maps.app.goo.gl/hgcMdmUZKkkd5gTi7">
                         <span>Our Maps</span>
                         <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -892,7 +794,7 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text">Copyright © 2036 Festava Live Company</p>
+                        <p class="copyright-text">Copyright © 2036 ConHub Live Company</p>
                     </div>
 
                     <div class="col-lg-8 col-12 mt-lg-5">
