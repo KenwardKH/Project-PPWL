@@ -32,7 +32,7 @@ class JadwalKonserSeeder extends Seeder
             "id" => 2,
             "nama" => 'Music Time',
             "gambar" => 'download.jpg',
-            "artis" => 'Kanabon',
+            "artis" => 'Babymetal',
             "harga" => 200000,
             "tanggal_konser" => '2024-08-4',
             "waktu_mulai" => '13:00:00',
