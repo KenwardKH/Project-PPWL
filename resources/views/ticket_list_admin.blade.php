@@ -30,9 +30,9 @@
                                 <thead>
                                     <tr>
                                         <th class="px-4 py-2">ID</th>
-                                        <th class="px-4 py-2">Nama Acara</th>
+                                        <th class="px-4 py-2">ID Acara</th>
                                         <th class="px-4 py-2">Nama Pemesan</th>
-                                        <th class="px-4 py-2">Email</th>
+                                        <th class="px-4 py-2">ID User</th>
                                         <th class="px-4 py-2">Jumlah</th>
                                         <th class="px-4 py-2">Additional</th>
                                         <th class="px-4 py-2">Tanggal Pemesanan</th>
@@ -46,9 +46,9 @@
                                     @foreach ($ticket as $tickets)
                                         <tr>
                                             <td class="border px-4 py-2">{{ $tickets->id }}</td>
-                                            <td class="border px-4 py-2">{{ $tickets->nama_acara }}</td>
+                                            <td class="border px-4 py-2">{{ $tickets->id_acara }}</td>
                                             <td class="border px-4 py-2">{{ $tickets->nama }}</td>
-                                            <td class="border px-4 py-2">{{ $tickets->email }}</td>
+                                            <td class="border px-4 py-2">{{ $tickets->id_user }}</td>
                                             <td class="border px-4 py-2">{{ $tickets->jumlah }}</td>
                                             <td class="border px-4 py-2">{{ $tickets->additional }}</td>
                                             <td class="border px-4 py-2">{{ $tickets->created_at }}</td>

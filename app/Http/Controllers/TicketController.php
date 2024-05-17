@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Models\Jadwal_Konser;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
@@ -19,9 +20,12 @@ class TicketController extends Controller
     }
     public function ticket_list()
     {
-        $ticket = Ticket::all();
-        return view('ticket_list', ['ticket' => $ticket]);
+        $userId = Auth::user()->id;
+        $tickets = Ticket::with('jadwal')->where('id_user', $userId)->get(); // Load hanya tiket dari user yang sedang login
+        return view('ticket_list', ['tickets' => $tickets]);
     }
+
+
     public function ticket_list_admin()
     {
         $ticket = Ticket::all();
@@ -42,50 +46,52 @@ class TicketController extends Controller
     public function store(Request $request)
     {
         $validation = $request->validate([
-            'nama_acara' => 'required|min:1|max:255',
             'nama' => 'required|min:1|max:255',
-            'email' => 'required|min:1|max:255',
+            'id_user' => 'required|min:1|max:255',
+            'id_acara' => 'required|min:1|max:255',
             'nomor_hp' => 'required|min:0|max:255',
             'jumlah' => 'required|min:1|max:255',
         ]);
 
         $tiket = Ticket::create([
-            'nama_acara' => $validation['nama_acara'],
             'nama' => $validation['nama'],
-            'email' => $validation['email'],
+            'id_user' => $validation['id_user'],
+            'id_acara' => $validation['id_acara'],
             'nomor_hp' => $validation['nomor_hp'],
             'jumlah' => $validation['jumlah'],
             'additional' => $request->input('additional'),
         ]);
         
         $id = $tiket->id;
-        $nama_acara = $tiket->nama_acara;
         $nama = $tiket->nama;
-        $email = $tiket->email;
+        $id_user = $tiket->id_user;
+        $id_acara = $tiket->id_acara;
         $nomor_hp = $tiket->nomor_hp;
         $jumlah = $tiket->jumlah;
         $additional = $tiket->additional;
-        $jadwal = Jadwal_Konser::where('nama', $nama_acara)->first();
+        $jadwal = Jadwal_Konser::where('id', $id_acara)->first();
         $total_harga = $jumlah * $jadwal->harga;
-        return view('bayar_ticket', compact('id', 'nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional','total_harga'));
+        $nama_acara = $jadwal->nama;
+        return view('bayar_ticket', compact('id','nama_acara', 'id_acara', 'nama', 'id_user', 'nomor_hp', 'jumlah', 'additional','total_harga'));
     }
     
     public function bayar($id)
     {   
         // Ambil data tiket berdasarkan ID
         $tiket = Ticket::find($id);
-        $nama_acara = $tiket->nama_acara;
+        $id_acara = $tiket->id_acara;
         $nama = $tiket->nama;
-        $email = $tiket->email;
+        $id_user = $tiket->is_user;
         $nomor_hp = $tiket->nomor_hp;
         $jumlah = $tiket->jumlah;
         $additional = $tiket->additional;
 
-        $jadwal = Jadwal_Konser::where('nama', $tiket->nama_acara)->first();
+        $jadwal = Jadwal_Konser::where('id', $tiket->id_acara)->first();
 
         $total_harga = $jumlah * $jadwal->harga;
+        $nama_acara = $jadwal->nama;
 
-        return view('bayar_ticket', compact('id','nama_acara', 'nama', 'email', 'nomor_hp', 'jumlah', 'additional', 'total_harga'));
+        return view('bayar_ticket', compact('id','nama_acara', 'nama', 'id_user', 'nomor_hp', 'jumlah', 'additional', 'total_harga'));
     }
 
     public function ubah_status($id){

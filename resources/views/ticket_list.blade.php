@@ -167,10 +167,10 @@ https://templatemo.com/tm-583-festava-live
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($ticket->where('email', Auth::user()->email) as $tickets)
+                                @foreach ($tickets as $tickets)
                                     <tr>
                                         <td class="border px-4 py-2">{{ $tickets->id }}</td>
-                                        <td class="border px-4 py-2">{{ $tickets->nama_acara }}</td>
+                                        <td class="border px-4 py-2">{{ $tickets->jadwal->nama }}</td>
                                         <td class="border px-4 py-2">{{ $tickets->nama }}</td>
                                         <td class="border px-4 py-2">{{ $tickets->jumlah }}</td>
                                         <td class="border px-4 py-2">{{ $tickets->additional }}</td>
