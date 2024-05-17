@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jadwal__konsers');
+        Schema::dropIfExists('jadwal_konser');
     }
 };
