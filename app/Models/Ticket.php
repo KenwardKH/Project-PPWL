@@ -8,14 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
     use HasFactory;
-
+    public function jadwal()
+    {
+        return $this->belongsTo(Jadwal_Konser::class, 'id_acara');
+    }
     protected $table = 'tickets';
     protected $primaryKey = 'id';
-
+    
     protected $fillable = [
-        'nama_acara',
+        'id_acara',
         'nama',
-        'email',
+        'id_user',
         'nomor_hp',
         'jumlah',
         'additional',

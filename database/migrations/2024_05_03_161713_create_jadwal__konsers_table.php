@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jadwal_konsers', function (Blueprint $table) {
+        Schema::create('jadwal_konser', function (Blueprint $table) {
             $table->id();
             $table->string('nama')->unique();
             $table->string('gambar')->nullable();

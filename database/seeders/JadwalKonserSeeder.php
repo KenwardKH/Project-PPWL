@@ -12,9 +12,9 @@ class JadwalKonserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('jadwal_konsers')->truncate(); // Menghapus data yang sudah ada, bisa disesuaikan dengan kebutuhan
+        // DB::table('jadwal_konser')->truncate(); // Menghapus data yang sudah ada, bisa disesuaikan dengan kebutuhan
 
-        DB::table('jadwal_konsers')->insert([
+        DB::table('jadwal_konser')->insert([
             "id" => 1,
             "nama" => 'Music Festival',
             "gambar" => 'raisa.jpg',
@@ -28,7 +28,7 @@ class JadwalKonserSeeder extends Seeder
             "updated_at" => now()
         ]);
 
-        DB::table('jadwal_konsers')->insert([
+        DB::table('jadwal_konser')->insert([
             "id" => 2,
             "nama" => 'Music Time',
             "gambar" => 'download.jpg',
@@ -42,7 +42,7 @@ class JadwalKonserSeeder extends Seeder
             "updated_at" => now()
         ]);
 
-        DB::table('jadwal_konsers')->insert([
+        DB::table('jadwal_konser')->insert([
             "id" => 3,
             "nama" => 'The Nights',
             "gambar" => 'music.jpg',

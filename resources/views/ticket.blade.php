@@ -159,10 +159,8 @@ https://templatemo.com/tm-583-festava-live
                                     src="{{ asset('images/poster/' . $jadwal->gambar) }}" alt=""></h2>
                             <div class="ticket-form-body">
                                 <div class="row">
-                                    <input type="text" name="nama_acara" class="form-control"
-                                        placeholder="Number of Tickets" value="{{ $jadwal->nama }}" hidden required>
-                                    <input type="email" name="email" pattern="[^ @]*@[^ @]*" value="{{ Auth::user()->email }}"
-                                        class="form-control" placeholder="Email address" hidden required>
+                                    <input type="text" name="id_acara" class="form-control" value="{{ $jadwal->id }}" hidden required>
+                                    <input type="text" name="id_user" value="{{ Auth::user()->id }}" class="form-control" hidden required>
                                 </div>
                                 <input type="text" name="nama" class="form-control"
                                             placeholder="Full name" required>

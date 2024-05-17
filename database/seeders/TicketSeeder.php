@@ -12,18 +12,9 @@ class TicketSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('tickets')->truncate(); // Menghapus data yang sudah ada, bisa disesuaikan dengan kebutuhan
+        DB::table('tickets')->truncate();
 
         DB::table('tickets')->insert([
-            "id" => 1,
-            "nama_acara" => 'Music Time',
-            "nama" => 'Asep',
-            "email" => 'asep@gmail.com',
-            "nomor_hp" => 3254633423,
-            "jumlah" => '2',
-            "additional" => '',
-            "created_at" => now(),
-            "updated_at" => now()
         ]);
     }
 }

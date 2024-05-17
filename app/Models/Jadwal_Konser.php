@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal_Konser extends Model
 {
     use HasFactory;
-
-    protected $table = 'jadwal_konsers';
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class, 'id_acara');
+    }
+    protected $table = 'jadwal_konser';
     protected $primaryKey = 'id';
 
     protected $fillable = [

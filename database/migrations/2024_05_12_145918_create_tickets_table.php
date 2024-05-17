@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_acara')->nullblade();
+            $table->unsignedBigInteger('id_acara');
+            $table->unsignedBigInteger('id_user');
             $table->string('nama')->nullable();
-            $table->string('email')->nullable();
             $table->string('nomor_hp')->nullable();
             $table->unsignedInteger('jumlah')->default(0);
             $table->string('additional')->nullable();
             $table->enum('sudah_dibayar', ['Belum', 'Sudah'])->default('Belum');
             $table->timestamps();
             $table->string('bukti_trf')->nullable();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_acara')->references('id')->on('jadwal_konser')->onDelete('cascade');
         });
     }
 

@@ -168,11 +168,6 @@ https://templatemo.com/tm-583-festava-live
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        Email  : {{ $email }}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
                                         Nomor HP  : {{ $nomor_hp }}
                                     </div>
                                 </div>
