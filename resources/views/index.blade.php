@@ -517,6 +517,7 @@ https://templatemo.com/tm-583-festava-live
                                             <span>{{ $jadwal->waktu_mulai }}</span>
                                             <span>Rp{{ number_format($jadwal->harga, 0, ',', '.') }}</span>
                                             <span>{{ $jadwal->lokasi }}</span>
+                                            <span>Last Order: {{ $jadwal->tanggal_akhir }}</span>
                                             @auth
                                                 <a href="{{ route('beli_tiket', $jadwal->id) }}"
                                                     class="btn custom-btn">Buy Ticket</a>
