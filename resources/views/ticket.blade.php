@@ -52,9 +52,7 @@ https://templatemo.com/tm-583-festava-live
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <div height="20px" width="20px">
-                        <img src="images\logo.png">
-                    </div>
+                   <img src="{{ asset('images/logo.png') }}" alt="">
                 </a>
 
                 <a href="ticket" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
