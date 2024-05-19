@@ -23,6 +23,8 @@ class Jadwal_Konser extends Model
         'tanggal_konser',
         'waktu_mulai',
         'waktu_berakhir',
+        'tanggal_posting',
+        'tanggal_akhir',
         'lokasi',
     ];
 }

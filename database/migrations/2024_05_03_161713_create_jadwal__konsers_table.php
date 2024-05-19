@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('tanggal_konser');
             $table->time('waktu_mulai');
             $table->time('waktu_berakhir');
+            $table->date('tanggal_posting')->nullable();
+            $table->date('tanggal_akhir')->nullable();
             $table->string('lokasi')->nullable();
             $table->timestamps();
         });

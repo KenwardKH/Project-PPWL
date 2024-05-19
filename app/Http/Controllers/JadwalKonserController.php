@@ -11,10 +11,13 @@ class JadwalKonserController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $jadwal_konsers = Jadwal_Konser::all();
-        return view('index', compact('jadwal_konsers'));
-    }
+{
+    $today = now()->format('Y-m-d');
+    $jadwal_konsers = Jadwal_Konser::where('tanggal_posting', '<=', $today)
+                                    ->where('tanggal_akhir', '>=', $today)
+                                    ->get();
+    return view('index', compact('jadwal_konsers'));
+}
 
     /**
      * Show the form for creating a new resource.
@@ -37,6 +40,8 @@ class JadwalKonserController extends Controller
             'tanggal_konser' => 'required|min:1|max:255',
             'waktu_mulai' => 'required|min:1|max:255',
             'waktu_berakhir' => 'required|min:1|max:255',
+            'tanggal_posting' => 'required|min:1|max:255',
+            'tanggal_akhir' => 'required|min:1|max:255',
             'lokasi' => 'required|min:1|max:255',
         ]);
         $image = $request->file('gambar');
@@ -52,6 +57,8 @@ class JadwalKonserController extends Controller
             'tanggal_konser' => $validation['tanggal_konser'],
             'waktu_mulai' => $validation['waktu_mulai'],
             'waktu_berakhir' => $validation['waktu_berakhir'],
+            'tanggal_posting' => $validation['tanggal_posting'],
+            'tanggal_akhir' => $validation['tanggal_akhir'],
             'lokasi' => $validation['lokasi'],
         ]);
 
@@ -94,6 +101,8 @@ class JadwalKonserController extends Controller
             'tanggal_konser' => 'required|min:1|max:255',
             'waktu_mulai' => 'required|min:1|max:255',
             'waktu_berakhir' => 'required|min:1|max:255',
+            'tanggal_posting' => 'required|min:1|max:255',
+            'tanggal_akhir' => 'required|min:1|max:255',
             'lokasi' => 'required|min:1|max:255',
         ]);
 
@@ -110,6 +119,8 @@ class JadwalKonserController extends Controller
             'tanggal_konser' => $validation['tanggal_konser'],
             'waktu_mulai' => $validation['waktu_mulai'],
             'waktu_berakhir' => $validation['waktu_berakhir'],
+            'tanggal_posting' => $validation['tanggal_posting'],
+            'tanggal_akhir' => $validation['tanggal_akhir'],
             'lokasi' => $validation['lokasi'],
         ]);
 

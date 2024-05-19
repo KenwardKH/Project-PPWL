@@ -55,6 +55,8 @@
                                         <th class="px-4 py-2">Tanggal Konser</th>
                                         <th class="px-4 py-2">Waktu Mulai</th>
                                         <th class="px-4 py-2">Waktu Berakhir</th>
+                                        <th class="px-4 py-2">Tanggal Posting</th>
+                                        <th class="px-4 py-2">Tanggal Akhir</th>
                                         <th class="px-4 py-2">Lokasi</th>
                                         <th class="px-4 py-2">Dibuat Tanggal</th>
                                         <th class="px-4 py-2">Diupdate Tanggal</th>
@@ -73,6 +75,8 @@
                                             <td class="border px-4 py-2">{{ $jadwal->tanggal_konser }}</td>
                                             <td class="border px-4 py-2">{{ $jadwal->waktu_mulai }}</td>
                                             <td class="border px-4 py-2">{{ $jadwal->waktu_berakhir }}</td>
+                                            <td class="border px-4 py-2">{{ $jadwal->tanggal_posting }}</td>
+                                            <td class="border px-4 py-2">{{ $jadwal->tanggal_akhir }}</td>
                                             <td class="border px-4 py-2">{{ $jadwal->lokasi }}</td>
                                             <td class="border px-4 py-2">{{ $jadwal->created_at }}</td>
                                             <td class="border px-4 py-2">{{ $jadwal->updated_at }}</td>

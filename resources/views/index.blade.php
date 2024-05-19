@@ -216,11 +216,7 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_5">Pricing</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                            <a class="nav-link click-scroll" href="#section_5">Contact</a>
                         </li>
 
                         @auth
@@ -545,7 +541,7 @@ https://templatemo.com/tm-583-festava-live
             </div>
         </section>
         
-        <section class="contact-section section-padding" id="section_6">
+        <section class="contact-section section-padding" id="section_5">
             @auth
                 <div class="container">
                     <div class="row">
@@ -663,7 +659,7 @@ https://templatemo.com/tm-583-festava-live
                                 <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
                                     aria-labelledby="nav-ContactMap-tab">
                                     <iframe class="google-map"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29974.469402870927!2d120.94861466021855!3d14.106066818082482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd777b1ab54c8f%3A0x6ecc514451ce2be8!2sTagaytay%2C%20Cavite%2C%20Philippines!5e1!3m2!1sen!2smy!4v1670344209509!5m2!1sen!2smy"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63713.73565657227!2d98.58752882167968!3d3.5624908999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f97601b85fb%3A0x61aad0b3bbb7313a!2sUniversity%20of%20North%20Sumatra%20-%20Faculty%20of%20Computer%20Science%20and%20Information%20Technology!5e0!3m2!1sid!2sid!4v1716109447000!5m2!1sid!2sid"
                                         width="100%" height="450" style="border:0;" allowfullscreen=""
                                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->

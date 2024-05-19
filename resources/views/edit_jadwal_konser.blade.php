@@ -49,6 +49,14 @@
                                         <input type="time" name="waktu_berakhir"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
                                             autocomplete="off" value="{{ $jadwal->waktu_berakhir }}">
+                                        Tanggal Posting
+                                        <input type="date" name="tanggal_posting"
+                                            class="rounded-md bg-gray-900 border-none text-white isi" required
+                                            autocomplete="off" value="{{ $jadwal->tanggal_posting }}">
+                                        Tanggal Akhir
+                                        <input type="date" name="tanggal_akhir"
+                                            class="rounded-md bg-gray-900 border-none text-white isi" required
+                                            autocomplete="off" value="{{ $jadwal->tanggal_akhir }}">
                                         Lokasi
                                         <input type="text" placeholder="Lokasi" name="lokasi"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required

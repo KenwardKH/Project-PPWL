@@ -48,6 +48,14 @@
                                         <input type="time" name="waktu_berakhir"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
                                             autocomplete="off">
+                                        Tanggal Posting
+                                        <input type="date" name="tanggal_posting"
+                                            class="rounded-md bg-gray-900 border-none text-white isi" required
+                                            autocomplete="off">
+                                        Tanggal akhir
+                                        <input type="date" name="tanggal_akhir"
+                                            class="rounded-md bg-gray-900 border-none text-white isi" required
+                                            autocomplete="off">
                                         Lokasi
                                         <input type="text" placeholder="Lokasi" name="lokasi"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required

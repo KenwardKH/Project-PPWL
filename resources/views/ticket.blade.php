@@ -83,11 +83,7 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/#section_5">Pricing</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/#section_6">Contact</a>
+                            <a class="nav-link click-scroll" href="/#section_5">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/ticket_list">My Tickets</a>
@@ -190,7 +186,7 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-6 col-12">
-                        <h2 class="text-white mb-lg-0">Festava Live</h2>
+                        <h2 class="text-white mb-lg-0">ConHub</h2>
                     </div>
 
                     <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
@@ -254,10 +250,6 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
                             <a href="#" class="site-footer-link">Contact</a>
                         </li>
                     </ul>
@@ -283,9 +275,9 @@ https://templatemo.com/tm-583-festava-live
                     <h5 class="site-footer-title mb-3">Location</h5>
 
                     <p class="text-white d-flex mt-3 mb-2">
-                        Silang Junction South, Tagaytay, Cavite, Philippines</p>
+                        Jalan Dr. T. Mansur No.9, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</p>
 
-                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="https://maps.app.goo.gl/hgcMdmUZKkkd5gTi7">
                         <span>Our Maps</span>
                         <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -304,7 +296,7 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text">Copyright © 2036 Festava Live Company</p>
+                        <p class="copyright-text">Copyright © 2036 ConHub Live Company</p>
                     </div>
 
                     <div class="col-lg-8 col-12 mt-lg-5">
