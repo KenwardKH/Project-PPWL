@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Festava Live - Ticket HTML Form</title>
+    <title>ConHub Tickets</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@ https://templatemo.com/tm-583-festava-live
                     <div class="col-lg-12 col-12 d-flex flex-wrap">
                         <p class="d-flex me-4 mb-0">
                             <i class="bi-person custom-icon me-2"></i>
-                            <strong class="text-dark">Welcome to Music Festival 2023</strong>
+                            <strong class="text-dark">Welcum to Live Concert 2024</strong>
                         </p>
                     </div>
 
