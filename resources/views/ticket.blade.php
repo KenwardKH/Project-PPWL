@@ -12,10 +12,8 @@
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
@@ -54,7 +52,9 @@ https://templatemo.com/tm-583-festava-live
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    Festava Live
+                    <div height="20px" width="20px">
+                        <img src="images\logo.png">
+                    </div>
                 </a>
 
                 <a href="ticket" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
@@ -88,7 +88,7 @@ https://templatemo.com/tm-583-festava-live
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/ticket_list">My Tickets</a>
                         </li>
-                        
+
                         @auth
                             <li>
                                 <div class="hidden sm:flex sm:items-center sm:ms-6" x-data="{ open: false }">

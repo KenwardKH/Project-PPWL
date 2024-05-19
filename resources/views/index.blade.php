@@ -12,10 +12,9 @@
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,7 +27,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Plus Jakarta Sans', Times, serif;
         }
 
         .wrapper {
@@ -541,7 +540,7 @@ https://templatemo.com/tm-583-festava-live
                 </div>
             </div>
         </section>
-        
+
         <section class="contact-section section-padding" id="section_5">
             @auth
                 <div class="container">
@@ -871,20 +870,20 @@ T e m p l a t e M o
             const dragging = (e) => {
                 if (!isDragging) return;
 
-                // Calculate the new scroll position 
+                // Calculate the new scroll position
                 const newScrollLeft = startScrollLeft - (e.pageX - startX);
 
-                // Check if the new scroll position exceeds 
-                // the carousel boundaries 
+                // Check if the new scroll position exceeds
+                // the carousel boundaries
                 if (newScrollLeft <= 0 || newScrollLeft >=
                     carousel.scrollWidth - carousel.offsetWidth) {
 
-                    // If so, prevent further dragging 
+                    // If so, prevent further dragging
                     isDragging = false;
                     return;
                 }
 
-                // Otherwise, update the scroll position of the carousel 
+                // Otherwise, update the scroll position of the carousel
                 carousel.scrollLeft = newScrollLeft;
             };
 
@@ -895,19 +894,19 @@ T e m p l a t e M o
 
             const autoPlay = () => {
 
-                // Return if window is smaller than 800 
+                // Return if window is smaller than 800
                 if (window.innerWidth < 800) return;
 
-                // Calculate the total width of all cards 
+                // Calculate the total width of all cards
                 const totalCardWidth = carousel.scrollWidth;
 
-                // Calculate the maximum scroll position 
+                // Calculate the maximum scroll position
                 const maxScrollLeft = totalCardWidth - carousel.offsetWidth;
 
-                // If the carousel is at the end, stop autoplay 
+                // If the carousel is at the end, stop autoplay
                 if (carousel.scrollLeft >= maxScrollLeft) return;
 
-                // Autoplay the carousel after every 2500ms 
+                // Autoplay the carousel after every 2500ms
                 timeoutId = setTimeout(() =>
                     carousel.scrollLeft += firstCardWidth, 2500);
             };
@@ -919,8 +918,8 @@ T e m p l a t e M o
                 clearTimeout(timeoutId));
             wrapper.addEventListener("mouseleave", autoPlay);
 
-            // Add event listeners for the arrow buttons to 
-            // scroll the carousel left and right 
+            // Add event listeners for the arrow buttons to
+            // scroll the carousel left and right
             arrowBtns.forEach(btn => {
                 btn.addEventListener("click", () => {
                     carousel.scrollLeft += btn.id === "left" ?
