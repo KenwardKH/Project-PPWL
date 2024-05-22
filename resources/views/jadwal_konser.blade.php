@@ -22,14 +22,18 @@
             font-size: 24;
             background-color: green;
             border-radius: 10px;
-            color: white
+            color: white;
+            margin-top: 60px;
         }
         .judul {
             display: flex;
-            justify-content: space-between
+            justify-content: center;
+            padding-top: 60px;
         }
-        img {
-            width: 400px
+        .add-konser {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 25px;
         }
     </style>
 
@@ -39,7 +43,9 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="container">
                         <div class="judul">
-                            <h1 class="text-2xl font-semibold mb-6">List Konser</h1>
+                            <h1 class="text-4xl font-semibold">List Konser</h1>
+                        </div>
+                        <div class="add-konser">
                             <a href="add_jadwal_konser"><button class="btn"><h3>+ Tambah Jadwal Konser</h3></button></a>
                         </div>
                         
@@ -53,18 +59,19 @@
                                         <th class="px-4 py-2">Artis</th>
                                         <th class="px-4 py-2">Update</th>
                                         <th class="px-4 py-2">Delete</th>
+                                        <th class="px-4 py-2">Details</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($jadwal_konsers as $jadwal)
                                         <tr>
-                                            <td class="border px-4 py-2">{{ $jadwal->id }}</td>
-                                            <td class="border px-4 py-2">{{ $jadwal->nama }}</td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $jadwal->id }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $jadwal->nama }}</h2></td>
                                             <td class="border px-4 py-2"><img src="{{ asset('images/poster/' . $jadwal->gambar) }}" alt="gambar" style="width:150px"></td>
-                                            <td class="border px-4 py-2">{{ $jadwal->artis }}</td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $jadwal->artis }}</h2></td>
                                             <td class="border px-4 py-2">
                                                 <a href="{{ route('edit_jadwal_konser', $jadwal->id)}}">
-                                                    <button>Update</button>
+                                                    <button class="bg-lime-600 ">Update</button>
                                                 </a>
                                             </td>
                                             <td class="border px-4 py-2">
@@ -77,7 +84,7 @@
                                             </td>
                                             <td class="border px-4 py-2">
                                             <a href="#" class="open-modal" data-id="{{ $jadwal->id }}" data-name="{{ $jadwal->nama }}" data-artist="{{ $jadwal->artis }}" data-price="Rp{{ number_format($jadwal->harga, 0, ',', '.') }}" data-date="{{ $jadwal->tanggal_konser }}" data-start="{{ $jadwal->waktu_mulai }}" data-end="{{ $jadwal->waktu_berakhir }}" data-posted="{{ $jadwal->tanggal_posting }}" data-end-date="{{ $jadwal->tanggal_akhir }}" data-location="{{ $jadwal->lokasi }}" data-created="{{ $jadwal->created_at }}" data-updated="{{ $jadwal->updated_at }}" data-image="{{ asset('images/poster/' . $jadwal->gambar) }}">
-                                                <button>Details</button>
+                                                <button class="bg-blue-500">Details</button>
                                             </a>
                                             </td>
                                         </tr>

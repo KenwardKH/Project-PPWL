@@ -249,7 +249,7 @@ https://templatemo.com/tm-583-festava-live
                                                 <form method="POST" action="{{ route('logout') }}">
                                                     @csrf
                                                     <button type="submit"
-                                                        style="display: block; width: 100%; padding: 0.5rem 1rem; font-size: 0.875rem; line-height: 1.25rem; text-align: left; color: #4B5563; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;"
+                                                        style="display: block; width: 100%; padding: 0.5rem 1rem; font-size: 0.875rem; line-height: 1.25rem; text-align: left; color: #4B5563; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; border:none; background:white"
                                                         class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                                                         role="menuitem" tabindex="-1" id="menu-item-1">Log Out</button>
                                                 </form>

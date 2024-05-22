@@ -5,13 +5,24 @@
             {{ __('Members') }}
         </h2>
     </x-slot>
+    <style>
+        .judul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 60px;
+            margin-top: 60px;
+        }
+    </style>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="container">
-                        <h1 class="text-2xl font-semibold mb-6">Member List</h1>
+                        <div class="judul">
+                            <h1 class="text-4xl font-semibold mb-6">Member List</h1>
+                        </div>
                         <div class="overflow-x-auto">
                             <table class="table-auto w-full">
                                 <thead>
@@ -28,11 +39,11 @@
                                 <tbody>
                                     @foreach ($members->where('role', 'member') as $user)
                                         <tr>
-                                            <td class="border px-4 py-2">{{ $user->id }}</td>
-                                            <td class="border px-4 py-2">{{ $user->name }}</td>
-                                            <td class="border px-4 py-2">{{ $user->email }}</td>
-                                            <td class="border px-4 py-2">{{ substr($user->password, 0, 15) }}....</td>
-                                            <td class="border px-4 py-2">{{ $user->role }}</td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $user->id }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $user->name }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $user->email }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ substr($user->password, 0, 15) }}....</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $user->role }}</h2></td>
                                             <td class="border px-4 py-2 text-center">
                                                 <a href="{{ route('edit_user', $user->id)}}">
                                                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">

@@ -17,6 +17,13 @@
             display: flex;
             justify-content: center
         }
+        .judul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 60px;
+            margin-top: 60px;
+        }
     </style>
 
     <div class="py-12">
@@ -24,7 +31,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="container">
-                        <h1 class="text-2xl font-semibold mb-6">Ticket List</h1>
+                    <div class="judul">
+                        <h1 class="text-4xl font-semibold mb-6">Ticket List</h1>
+                    </div>
                         <div class="overflow-x-auto">
                             <table class="table-auto w-full">
                                 <thead>

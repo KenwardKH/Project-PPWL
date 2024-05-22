@@ -164,13 +164,13 @@ https://templatemo.com/tm-583-festava-live
                             <tbody>
                                 @foreach ($tickets as $tickets)
                                     <tr>
-                                        <td class="border px-4 py-2">{{ $tickets->id }}</td>
-                                        <td class="border px-4 py-2">{{ $tickets->jadwal->nama }}</td>
-                                        <td class="border px-4 py-2">{{ $tickets->nama }}</td>
-                                        <td class="border px-4 py-2">{{ $tickets->jumlah }}</td>
-                                        <td class="border px-4 py-2">{{ $tickets->additional }}</td>
-                                        <td class="border px-4 py-2">{{ $tickets->created_at }}</td>
-                                        <td class="border px-4 py-2">
+                                        <td class="px-4 py-2">{{ $tickets->id }}</td>
+                                        <td class="px-4 py-2">{{ $tickets->jadwal->nama }}</td>
+                                        <td class="px-4 py-2">{{ $tickets->nama }}</td>
+                                        <td class="px-4 py-2">{{ $tickets->jumlah }}</td>
+                                        <td class="px-4 py-2">{{ $tickets->additional }}</td>
+                                        <td class="px-4 py-2">{{ $tickets->created_at }}</td>
+                                        <td class="px-4 py-2">
                                             @if ($tickets->sudah_dibayar == 'Sudah')
                                                 Sudah Dibayar
 
@@ -180,7 +180,7 @@ https://templatemo.com/tm-583-festava-live
                                                 Menunggu Konfirmasi
                                             @endif
                                         </td>
-                                        <td class="border px-4 py-2">
+                                        <td class="px-4 py-2">
                                             <img src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}" alt="" width="200px" onclick="openModal('imageModal{{$tickets->id}}')">
                                         </td>
                                     </tr>
