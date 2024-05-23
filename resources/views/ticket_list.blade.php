@@ -10,10 +10,26 @@
 
     <title>ConHub Tickets</title>
 
+    <style>
+        .list_ticket {
+            width: 90%
+        }
+        .isi {
+            display: flex;
+            justify-content: center
+        }
+        th,td {
+            text-align: center;
+            padding: 4px 8px; 
+        }
+    </style>
+
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
 
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -27,11 +43,6 @@ TemplateMo 583 Festava Live
 https://templatemo.com/tm-583-festava-live
 
 -->
- <style>
-    .row {
-        margin-left: 8rem;
-    }
- </style>
 
 </head>
 
@@ -149,54 +160,58 @@ https://templatemo.com/tm-583-festava-live
         <section class="ticket-section section-padding">
             <div class="section-overlay"></div>
 
-            <div class="container">
-                <div class="row">
+            <div class="container isi">
+                <div class="list_ticket row">
 
-                    <div class="col-lg-6 col-10">
-                        <table class="table-auto w-full custom-form ticket-form mb-5 mb-lg-0">
-                            <thead>
+                    <table class="table-auto w-full custom-form ticket-form mb-5 mb-lg-0">
+                        <thead>
+                            <tr>
+                                <th class="text-center py-2">ID</th>
+                                <th class="text-center py-2">Nama Acara</th>
+                                <th class="text-center py-2">Nama Pemesan</th>
+                                <th class="text-center py-2">Jumlah</th>
+                                <th class="text-center py-2">Additional</th>
+                                <th class="text-center py-2">Tanggal Pemesanan</th>
+                                <th class="text-center py-2">Status</th>
+                                <th class="text-center py-2">Bukti Transfer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($tickets as $tickets)
                                 <tr>
-                                    <th class="px-4 py-2">ID</th>
-                                    <th class="px-4 py-2">Nama Acara</th>
-                                    <th class="px-4 py-2">Nama Pemesan</th>
-                                    <th class="px-4 py-2">Jumlah</th>
-                                    <th class="px-4 py-2">Additional</th>
-                                    <th class="px-4 py-2">Tanggal Pemesanan</th>
-                                    <th class="px-4 py-2">Status</th>
-                                    <th class="px-4 py-2">Bukti Transfer</th>
+                                    <td class="py-2 text-center">{{ $tickets->id }}</td>
+                                    <td class="py-2 text-center">{{ $tickets->jadwal->nama }}</td>
+                                    <td class="py-2 text-center">{{ $tickets->nama }}</td>
+                                    <td class="py-2 text-center">{{ $tickets->jumlah }}</td>
+                                    <td class="py-2 text-center">{{ $tickets->additional }}</td>
+                                    <td class="py-2">{{ $tickets->created_at }}</td>
+                                    <td class="py-2 text-center">
+                                        @if ($tickets->sudah_dibayar == 'Sudah')
+                                            Sudah Dibayar
+                                        @elseif($tickets->bukti_trf == null)
+                                            <a href="{{ route('bayar', ['id' => $tickets->id]) }}">Belum Dibayar</a>
+                                        @else
+                                            Menunggu Konfirmasi
+                                        @endif
+                                    </td>
+                                    <td class="px-4 py-2">
+                                        <img src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}"
+                                            alt="" style="margin: auto; display: block; width: 200px; max-height: 350px; max-width: 700px;"
+                                            onclick="openModal('imageModal{{ $tickets->id }}')">
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($tickets as $tickets)
-                                    <tr>
-                                        <td class="px-4 py-2 text-center">{{ $tickets->id }}</td>
-                                        <td class="px-4 py-2 text-center">{{ $tickets->jadwal->nama }}</td>
-                                        <td class="px-4 py-2 text-center">{{ $tickets->nama }}</td>
-                                        <td class="px-4 py-2 text-center">{{ $tickets->jumlah }}</td>
-                                        <td class="px-4 py-2 text-center">{{ $tickets->additional }}</td>
-                                        <td class="px-4 py-2">{{ $tickets->created_at }}</td>
-                                        <td class="px-4 py-2 text-center">
-                                            @if ($tickets->sudah_dibayar == 'Sudah')
-                                                Sudah Dibayar
-
-                                            @elseif($tickets->bukti_trf == NULL)
-                                                <a href="{{ route('bayar', ['id' => $tickets->id]) }}">Belum Dibayar</a>
-                                            @else
-                                                Menunggu Konfirmasi
-                                            @endif
-                                        </td>
-                                        <td class="px-4 py-2">
-                                            <img src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}" alt="" width="200px" onclick="openModal('imageModal{{$tickets->id}}')">
-                                        </td>
-                                    </tr>
-                                    <div id="imageModal{{$tickets->id}}" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
-                                        <span class="close" style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s;" onclick="closeModal('imageModal{{$tickets->id}}')">&times;</span>
-                                        <img class="modal-content" src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}" style="margin: auto; display: block; width: 80%; max-width: 700px;">
-                                    </div>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                                <div id="imageModal{{ $tickets->id }}" class="modal"
+                                    style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+                                    <span class="close"
+                                        style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s;"
+                                        onclick="closeModal('imageModal{{ $tickets->id }}')">&times;</span>
+                                    <img class="modal-content"
+                                        src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}"
+                                        style="margin: auto; display: block; width: 80%; max-width: 700px;">
+                                </div>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
         </section>
     </main>
@@ -365,13 +380,13 @@ T e m p l a t e M o
 
 
         function closeModal(modalId) {
-    var modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = "none";
-    } else {
-        console.error("Modal with ID '" + modalId + "' not found.");
-    }
-}
+            var modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "none";
+            } else {
+                console.error("Modal with ID '" + modalId + "' not found.");
+            }
+        }
     </script>
 </body>
 
