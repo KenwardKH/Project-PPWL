@@ -44,7 +44,7 @@
 
     <!-- Page Content -->
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 content">
-        <div class="w-full sm:max-w-md mt-6 px-8 py-5 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+        <div class="w-full sm:max-w-md mt-6 px-8 py-5 bg-gradient-to-br from-amber-300 via-orange-400 to-orange-600 dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
             {{ $slot }}
         </div>
     </div>

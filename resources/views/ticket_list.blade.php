@@ -27,6 +27,11 @@ TemplateMo 583 Festava Live
 https://templatemo.com/tm-583-festava-live
 
 -->
+ <style>
+    .row {
+        margin-left: 8rem;
+    }
+ </style>
 
 </head>
 
@@ -164,13 +169,13 @@ https://templatemo.com/tm-583-festava-live
                             <tbody>
                                 @foreach ($tickets as $tickets)
                                     <tr>
-                                        <td class="px-4 py-2">{{ $tickets->id }}</td>
-                                        <td class="px-4 py-2">{{ $tickets->jadwal->nama }}</td>
-                                        <td class="px-4 py-2">{{ $tickets->nama }}</td>
-                                        <td class="px-4 py-2">{{ $tickets->jumlah }}</td>
-                                        <td class="px-4 py-2">{{ $tickets->additional }}</td>
+                                        <td class="px-4 py-2 text-center">{{ $tickets->id }}</td>
+                                        <td class="px-4 py-2 text-center">{{ $tickets->jadwal->nama }}</td>
+                                        <td class="px-4 py-2 text-center">{{ $tickets->nama }}</td>
+                                        <td class="px-4 py-2 text-center">{{ $tickets->jumlah }}</td>
+                                        <td class="px-4 py-2 text-center">{{ $tickets->additional }}</td>
                                         <td class="px-4 py-2">{{ $tickets->created_at }}</td>
-                                        <td class="px-4 py-2">
+                                        <td class="px-4 py-2 text-center">
                                             @if ($tickets->sudah_dibayar == 'Sudah')
                                                 Sudah Dibayar
 

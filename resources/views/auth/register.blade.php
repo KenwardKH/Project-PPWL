@@ -9,21 +9,21 @@
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('Name')" class="text-white" />
             <x-text-input id="name" class="block mt-1 w-full text-black" type="text" name="name" :value="old('name')" required autofocus placeholder="Masukkan Nama Anda" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
         <div class="mt-4">
-            <x-input-label for="email" :value="__('E-Mail')" />
+            <x-input-label for="email" :value="__('E-Mail')" class="text-white"/>
             <x-text-input id="email" class="block mt-1 w-full text-black" type="email" name="email" :value="old('email')" required placeholder="Masukkan E-Mail Anda" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('Password')" class="text-white"/>
 
             <x-text-input id="password" class="block mt-1 w-full text-black"
                             type="password"
@@ -36,7 +36,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" class="text-white"/>
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full text-black"
                             type="password"
@@ -47,11 +47,11 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="mr-4 underline text-sm text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}"style="text-decoration: none"style="text-decoration: none" style="text-decoration: none">
+            <a class="mr-4 underline text-sm text-white dark:text-gray-100 hover:text-orange-100 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}"style="text-decoration: none"style="text-decoration: none" style="text-decoration: none">
                 {{ __('Already registered?') }}
             </a>
 
-            <button type="submit" class="px-4 py-2 bg-gray-900 text-white rounded-md shadow-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
+            <button type="submit" class="px-4 py-2 bg-zinc-600 text-white rounded-md shadow-md hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
                 {{ __('Register') }}
            <button>
         </div>

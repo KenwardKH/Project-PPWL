@@ -12,14 +12,14 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label  for="email" :value="__('E-Mail')"/>
+            <x-input-label  for="email" :value="__('E-Mail')" class="text-white"/>
             <x-text-input id="email" class="block mt-1 w-full text-black" type="email" name="email" :value="old('email')" required autofocus placeholder="Masukkan E-Mail Anda" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('Password')" class="text-white"/>
 
             <x-text-input id="password" class="block mt-1 w-full text-black"
                             type="password"
@@ -35,18 +35,18 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-orange-600 shadow-sm focus:ring-orange-500 dark:focus:ring-orange-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                <span class="ms-2 text-sm text-white dark:text-gray-100">{{ __('Remember me') }}</span>
             </label>
         </div>
 
         <div class="flex items-center justify-end mb-4">
             @if (Route::has('password.request'))
-                <a class="mr-4 underline text-sm text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}" style="text-decoration: none">
+                <a class="mr-4 underline text-sm text-white dark:text-gray-100 hover:text-orange-100 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}" style="text-decoration: none">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
 
-            <button type="submit" class="px-4 py-2 bg-gray-900 text-white rounded-md shadow-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
+            <button type="submit" class="px-4 py-2 bg-zinc-600 text-white rounded-md shadow-md hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
                 {{ __('Log in') }}
             </button>
         </div>
