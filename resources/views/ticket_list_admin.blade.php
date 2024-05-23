@@ -54,13 +54,13 @@
                                 <tbody>
                                     @foreach ($ticket as $tickets)
                                         <tr>
-                                            <td class="border px-4 py-2">{{ $tickets->id }}</td>
-                                            <td class="border px-4 py-2">{{ $tickets->id_acara }}</td>
-                                            <td class="border px-4 py-2">{{ $tickets->nama }}</td>
-                                            <td class="border px-4 py-2">{{ $tickets->id_user }}</td>
-                                            <td class="border px-4 py-2">{{ $tickets->jumlah }}</td>
-                                            <td class="border px-4 py-2">{{ $tickets->additional }}</td>
-                                            <td class="border px-4 py-2">{{ $tickets->created_at }}</td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->id }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->id_acara }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->nama }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->id_user }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->jumlah }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->additional }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->created_at }}</h2></td>
                                             <td class="border px-4 py-2">
                                                 @if ($tickets->sudah_dibayar == 'Sudah')
                                                     Sudah Dibayar
