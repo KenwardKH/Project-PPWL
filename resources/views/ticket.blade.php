@@ -158,9 +158,7 @@ https://templatemo.com/tm-583-festava-live
                                 </div>
                                 <input type="text" name="nama" class="form-control"
                                             placeholder="Full name" required>
-                                <input type="tel" class="form-control" name="nomor_hp"
-                                    placeholder="Ph 857-4563-7890" pattern="[0-9]{3}[0-9]{4}[0-9]{4}" required>
-
+                                <input type="tel" class="form-control" name="nomor_hp" placeholder="Ph 857-4563-7890" pattern="[0-9]{10,13}" required>
                                 <input type="number" name="jumlah" class="form-control"
                                     placeholder="Number of Tickets" required>
 
