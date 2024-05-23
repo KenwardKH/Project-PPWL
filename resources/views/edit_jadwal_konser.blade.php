@@ -8,13 +8,21 @@
         input {
             color-scheme: dark;
         }
+        .judul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
     </style>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="container">
-                        <h1 class="text-2xl font-semibold mb-6">Edit Jadwal Konser</h1>
+                        <div class="judul">
+                            <h1 class="text-2xl font-semibold mb-6">Edit Jadwal Konser</h1>
+                        </div>
                         <div class="overflow-x-auto">
                             <table class="table-auto w-full">
                                 <form action="/update-jadwal_konser" enctype="multipart/form-data" method="POST">
