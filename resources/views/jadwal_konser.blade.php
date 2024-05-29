@@ -79,7 +79,7 @@
                                                     @method('DELETE')
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{ $jadwal->id }}">
-                                                    <button type="submit">Delete</button>
+                                                    <button type="submit" onclick="return confirm('Apakah anda yakin untuk menghapus jadwal konser ini?')">Delete</button>
                                                 </form>
                                             </td>
                                             <td class="border px-4 py-2">
@@ -214,6 +214,7 @@
                 }
             };
         });
+       
     </script>
     
     
