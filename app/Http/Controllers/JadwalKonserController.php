@@ -34,7 +34,7 @@ class JadwalKonserController extends Controller
     {
         $validation = $request->validate([
             'nama' => 'required|min:1|max:255',
-            'gambar' => 'required|min:1|max:255',
+            'gambar' => 'required|min:1',
             'artis' => 'required|min:1|max:255',
             'harga' => 'required|numeric|min:0|max:9999999.99',
             'tanggal_konser' => 'required|min:1|max:255',
@@ -95,7 +95,7 @@ class JadwalKonserController extends Controller
     {
         $validation = $request->validate([
             'nama' => 'required|min:1|max:255',
-            'gambar' => 'required|min:1|max:255',
+            'gambar' => 'required|min:1',
             'artis' => 'required|min:1|max:255',
             'harga' => 'required|numeric|min:0|max:9999999.99',
             'tanggal_konser' => 'required|min:1|max:255',
