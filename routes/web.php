@@ -34,7 +34,7 @@ Route::get('/add_jadwal_konser', function () {
 })->middleware(['auth', 'verified'])->name('add_jadwal_konser');
 Route::post('/add_jadwal_konser',[JadwalKonserController::class, 'store']);
 Route::get('/edit_jadwal_konser/{id}', [JadwalKonserController::class, 'edit'])->name('edit_jadwal_konser');
-Route::post('/update-jadwal_konser', [JadwalKonserController::class, 'update'])->name('update-jadwal_konser');
+Route::post('/update-jadwal_konser/{id}', [JadwalKonserController::class, 'update'])->name('update-jadwal_konser');
 Route::delete('/delete-jadwal_konser/{id}', [JadwalKonserController::class, 'destroy'])->name('delete-jadwal_konser');
 
 Route::get('/ticket/{id}', [JadwalKonserController::class, 'tiket'])->name('beli_tiket');

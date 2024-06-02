@@ -8,7 +8,8 @@
         input {
             color-scheme: dark;
         }
-        .judul{
+
+        .judul {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,18 +26,21 @@
                         </div>
                         <div class="overflow-x-auto">
                             <table class="table-auto w-full">
-                                <form action="/update-jadwal_konser" enctype="multipart/form-data" method="POST">
+                                <form action={{ route('update-jadwal_konser', $jadwal->id)}} enctype="multipart/form-data" method="POST">
                                     @csrf
                                     <div class="p-4 md:p-5 flex flex-col gap-4">
                                         <input type="hidden" name="id" value="{{ $jadwal->id }}">
                                         Nama
                                         <input type="text" placeholder="Nama Acara" name="nama"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
-                                            autocomplete="off" value="{{ $jadwal->nama}}">
+                                            autocomplete="off" value="{{ $jadwal->nama }}">
                                         Gambar Poster
-                                        <input type="file" placeholder="Gambar Poster" name="gambar" accept="image/png, image/jpeg, image/jpg"
-                                            class="rounded-md bg-gray-900 border-none text-white isi" required
+                                        <input id="img_file" type="file" onChange="img_pathUrl(this);" placeholder="Gambar Poster" name="gambar"
+                                            accept="image/png, image/jpeg, image/jpg"
+                                            class="rounded-md bg-gray-900 border-none text-white isi"
                                             autocomplete="off" value="{{ $jadwal->gambar }}">
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                        <img src="{{ asset('images/poster/' . $jadwal->gambar) }}" id="img_url" alt="gambar menu" style="width:200px;">
                                         Artis/Band
                                         <input type="text" placeholder="Artis/Band" name="artis"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
@@ -44,7 +48,7 @@
                                         Harga
                                         <input type="number" placeholder="Harga Tiket" name="harga"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
-                                            autocomplete="off" value="{{ $jadwal->harga }}">
+                                            autocomplete="off" value="{{ $jadwal->harga }}" id>
                                         Tanggal Konser
                                         <input type="date" name="tanggal_konser"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
@@ -79,5 +83,25 @@
             </div>
         </div>
     </div>
+    <script>
+        function img_pathUrl(input){
+            $('#img_url')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
+        }
+    </script>
+    <script>
+        var inputBox = document.getElementById("inputBox");
+
+        var invalidChars = [
+            "-",
+            "+",
+            "e",
+        ];
+
+        inputBox.addEventListener("keydown", function(e) {
+            if (invalidChars.includes(e.key)) {
+                e.preventDefault();
+            }
+        });
+    </script>
 
 </x-app-layout>

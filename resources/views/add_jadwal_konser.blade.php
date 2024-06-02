@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
     <style>
-        input{
-            color-scheme:dark;
+        input {
+            color-scheme: dark;
         }
     </style>
     <div class="py-12">
@@ -25,9 +25,14 @@
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
                                             autocomplete="off">
                                         Gambar Poster
-                                        <input type="file" placeholder="Gambar Poster" name="gambar" accept="image/png, image/jpeg, image/jpg"
+                                        <input id="img_file" type="file" onChange="img_pathUrl(this);"
+                                            placeholder="Gambar Poster" name="gambar"
+                                            accept="image/png, image/jpeg, image/jpg"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
                                             autocomplete="off">
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                        <img src="" id="img_url" alt="Gambar Poster"
+                                            style="width:200px; border: 2px solid">
                                         Artis/Band
                                         <input type="text" placeholder="Artis/Band" name="artis"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
@@ -35,7 +40,7 @@
                                         Harga
                                         <input type="number" placeholder="Harga Tiket" name="harga"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
-                                            autocomplete="off">
+                                            autocomplete="off" id="inputBox">
                                         Tanggal Konser
                                         <input type="date" name="tanggal_konser"
                                             class="rounded-md bg-gray-900 border-none text-white isi" required
@@ -70,5 +75,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function img_pathUrl(input) {
+            $('#img_url')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
+        }
+    </script>
+    <script>
+        var inputBox = document.getElementById("inputBox");
+
+        var invalidChars = [
+            "-",
+            "+",
+            "e",
+        ];
+
+        inputBox.addEventListener("keydown", function(e) {
+            if (invalidChars.includes(e.key)) {
+                e.preventDefault();
+            }
+        });
+    </script>
 
 </x-app-layout>

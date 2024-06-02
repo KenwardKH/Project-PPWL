@@ -91,41 +91,44 @@ class JadwalKonserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
-    {
-        $validation = $request->validate([
-            'nama' => 'required|min:1|max:255',
-            'gambar' => 'required|min:1',
-            'artis' => 'required|min:1|max:255',
-            'harga' => 'required|numeric|min:0|max:9999999.99',
-            'tanggal_konser' => 'required|min:1|max:255',
-            'waktu_mulai' => 'required|min:1|max:255',
-            'waktu_berakhir' => 'required|min:1|max:255',
-            'tanggal_posting' => 'required|min:1|max:255',
-            'tanggal_akhir' => 'required|min:1|max:255',
-            'lokasi' => 'required|min:1|max:255',
-        ]);
+    public function update(Request $request, string $id)
+{
+    $validation = $request->validate([
+        'nama' => 'required|min:1|max:255',
+        'artis' => 'required|min:1|max:255',
+        'harga' => 'required|numeric|min:0|max:9999999.99',
+        'tanggal_konser' => 'required|min:1|max:255',
+        'waktu_mulai' => 'required|min:1|max:255',
+        'waktu_berakhir' => 'required|min:1|max:255',
+        'tanggal_posting' => 'required|min:1|max:255',
+        'tanggal_akhir' => 'required|min:1|max:255',
+        'lokasi' => 'required|min:1|max:255',
+    ]);
 
+    $updateData = [
+        'nama' => $validation['nama'],
+        'artis' => $validation['artis'],
+        'harga' => $validation['harga'],
+        'tanggal_konser' => $validation['tanggal_konser'],
+        'waktu_mulai' => $validation['waktu_mulai'],
+        'waktu_berakhir' => $validation['waktu_berakhir'],
+        'tanggal_posting' => $validation['tanggal_posting'],
+        'tanggal_akhir' => $validation['tanggal_akhir'],
+        'lokasi' => $validation['lokasi'],
+    ];
+
+    if ($request->hasFile('gambar')) {
         $image = $request->file('gambar');
         $imageName = $image->getClientOriginalName();
         // Move the image to the public/images/poster directory
         $image->move(public_path('images/poster'), $imageName);
-
-        Jadwal_Konser::where('id', $request->id)->update([
-            'nama' => $validation['nama'],
-            'gambar' => $imageName,
-            'artis' => $validation['artis'],
-            'harga' => $validation['harga'],
-            'tanggal_konser' => $validation['tanggal_konser'],
-            'waktu_mulai' => $validation['waktu_mulai'],
-            'waktu_berakhir' => $validation['waktu_berakhir'],
-            'tanggal_posting' => $validation['tanggal_posting'],
-            'tanggal_akhir' => $validation['tanggal_akhir'],
-            'lokasi' => $validation['lokasi'],
-        ]);
-
-        return redirect('/jadwal_konser');
+        $updateData['gambar'] = $imageName;
     }
+
+    Jadwal_Konser::where('id', $id)->update($updateData);
+
+    return redirect('/jadwal_konser');
+}
 
     /**
      * Remove the specified resource from storage.

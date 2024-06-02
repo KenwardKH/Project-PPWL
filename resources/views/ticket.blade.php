@@ -13,7 +13,9 @@
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
@@ -52,7 +54,7 @@ https://templatemo.com/tm-583-festava-live
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                   <img src="{{ asset('images/logo.png') }}" alt="">
+                    <img src="{{ asset('images/logo.png') }}" alt="">
                 </a>
 
                 <a href="ticket" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
@@ -153,14 +155,17 @@ https://templatemo.com/tm-583-festava-live
                                     src="{{ asset('images/poster/' . $jadwal->gambar) }}" alt=""></h2>
                             <div class="ticket-form-body">
                                 <div class="row">
-                                    <input type="text" name="id_acara" class="form-control" value="{{ $jadwal->id }}" hidden required>
-                                    <input type="text" name="id_user" value="{{ Auth::user()->id }}" class="form-control" hidden required>
+                                    <input type="text" name="id_acara" class="form-control"
+                                        value="{{ $jadwal->id }}" hidden required>
+                                    <input type="text" name="id_user" value="{{ Auth::user()->id }}"
+                                        class="form-control" hidden required>
                                 </div>
-                                <input type="text" name="nama" class="form-control"
-                                            placeholder="Full name" required>
-                                <input type="tel" class="form-control" name="nomor_hp" placeholder="Ph 857-4563-7890" pattern="[0-9]{10,13}" required>
+                                <input type="text" name="nama" class="form-control" placeholder="Full name"
+                                    required>
+                                <input type="tel" class="form-control" name="nomor_hp"
+                                    placeholder="Ph 857-4563-7890" pattern="[0-9]{10,13}" required>
                                 <input type="number" name="jumlah" class="form-control"
-                                    placeholder="Number of Tickets" required>
+                                    placeholder="Number of Tickets" required id="inputBox" min="1" max="5">
 
                                 <textarea name="additional" rows="3" class="form-control" id="ticket-form-message"
                                     placeholder="Additional Request"></textarea>
@@ -321,6 +326,21 @@ T e m p l a t e M o
 
 -->
     <!-- JAVASCRIPT FILES -->
+    <script>
+        var inputBox = document.getElementById("inputBox");
+
+        var invalidChars = [
+            "-",
+            "+",
+            "e",
+        ];
+
+        inputBox.addEventListener("keydown", function(e) {
+            if (invalidChars.includes(e.key)) {
+                e.preventDefault();
+            }
+        });
+    </script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/jquery.sticky.js') }}"></script>
