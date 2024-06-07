@@ -37,13 +37,11 @@ class MemberController extends Controller
         $validation = $request->validate([
             'name' => 'required|min:1|max:255',
             'email' => 'required|email|max:255', // assuming email field
-            'password' => 'required|min:6|max:255', // assuming password field
         ]);
 
         $user = User::find($request->id);
         $user->name = $validation['name'];
         $user->email = $validation['email'];
-        $user->password = bcrypt($validation['password']); // Hashing password for security
         $user->save();
         return redirect()->route('members')->with('success', 'User updated successfully.');
     }   

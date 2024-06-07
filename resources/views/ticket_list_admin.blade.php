@@ -59,7 +59,13 @@
                                             <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->nama }}</h2></td>
                                             <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->id_user }}</h2></td>
                                             <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->jumlah }}</h2></td>
-                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->additional }}</h2></td>
+                                            <td class="border px-4 py-2"><h2 class="text-center">
+                                                @if($tickets->additional == "")
+                                                    Tidak ada tambahan
+                                                @else
+                                                {{ $tickets->additional }}</h2>
+                                                @endif
+                                            </td>
                                             <td class="border px-4 py-2"><h2 class="text-center">{{ $tickets->created_at }}</h2></td>
                                             <td class="border px-4 py-2">
                                                 @if ($tickets->sudah_dibayar == 'Sudah')
@@ -71,9 +77,13 @@
                                                 @endif
                                             </td>
                                             <td class="border px-4 py-2">
+                                                @if($tickets->bukti_trf == NULL)
+                                                    Belum ada bukti transfer
+                                                @else
                                                 <img src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}"
                                                     alt="" width="200px"
                                                     onclick="openModal('imageModal{{ $tickets->id }}')">
+                                                @endif
                                             </td>
                                             <div id="imageModal{{ $tickets->id }}" class="modal"
                                                 style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
@@ -86,7 +96,9 @@
                                             </div>
                                             <td class="border px-4 py-2">
                                                 @if($tickets->bukti_trf == NULL)
-
+                                                    Belum ada bukti transfer
+                                                @elseif ($tickets->sudah_dibayar == 'Sudah')
+                                                    Sudah dikonfirmasi
                                                 @else
                                                     <form action="{{ route('ubah_status', ['id' => $tickets->id]) }}"
                                                     method="POST">

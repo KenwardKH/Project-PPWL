@@ -29,8 +29,6 @@
                                         <th class="px-4 py-2">ID</th>
                                         <th class="px-4 py-2">Name</th>
                                         <th class="px-4 py-2">Email</th>
-                                        <th class="px-4 py-2">Password</th>
-                                        <th class="px-4 py-2">Role</th>
                                         <th class="px-4 py-2">Edit</th>
                                         <th class="px-4 py-2">Delete</th>
                                     </tr>
@@ -41,8 +39,6 @@
                                             <td class="border px-4 py-2"><h2 class="text-center">{{ $user->id }}</h2></td>
                                             <td class="border px-4 py-2"><h2 class="text-center">{{ $user->name }}</h2></td>
                                             <td class="border px-4 py-2"><h2 class="text-center">{{ $user->email }}</h2></td>
-                                            <td class="border px-4 py-2"><h2 class="text-center">{{ substr($user->password, 0, 15) }}....</h2></td>
-                                            <td class="border px-4 py-2"><h2 class="text-center">{{ $user->role }}</h2></td>
                                             <td class="border px-4 py-2 text-center">
                                                 <a href="{{ route('edit_user', $user->id)}}">
                                                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">

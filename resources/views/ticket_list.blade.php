@@ -14,13 +14,16 @@
         .list_ticket {
             width: 90%
         }
+
         .isi {
             display: flex;
             justify-content: center
         }
-        th,td {
+
+        th,
+        td {
             text-align: center;
-            padding: 4px 8px; 
+            padding: 4px 8px;
         }
     </style>
 
@@ -183,7 +186,13 @@ https://templatemo.com/tm-583-festava-live
                                     <td class="py-2 text-center">{{ $tickets->jadwal->nama }}</td>
                                     <td class="py-2 text-center">{{ $tickets->nama }}</td>
                                     <td class="py-2 text-center">{{ $tickets->jumlah }}</td>
-                                    <td class="py-2 text-center">{{ $tickets->additional }}</td>
+                                    <td class="py-2 text-center">
+                                        @if ($tickets->additional == '')
+                                            Tidak ada tambahan
+                                        @else
+                                            {{ $tickets->additional }}</h2>
+                                        @endif
+                                    </td>
                                     <td class="py-2">{{ $tickets->created_at }}</td>
                                     <td class="py-2 text-center">
                                         @if ($tickets->sudah_dibayar == 'Sudah')
@@ -195,9 +204,14 @@ https://templatemo.com/tm-583-festava-live
                                         @endif
                                     </td>
                                     <td class="px-4 py-2">
-                                        <img src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}"
-                                            alt="" style="margin: auto; display: block; width: 200px; max-height: 350px; max-width: 700px;"
-                                            onclick="openModal('imageModal{{ $tickets->id }}')">
+                                        @if ($tickets->bukti_trf == null)
+                                            Belum ada bukti transfer
+                                        @else
+                                            <img src="{{ asset('images/bukti_trf/' . $tickets->bukti_trf) }}"
+                                                alt="bukti_transfer"
+                                                style="margin: auto; display: block; width: 200px; max-height: 350px; max-width: 700px;"
+                                                onclick="openModal('imageModal{{ $tickets->id }}')">
+                                        @endif
                                     </td>
                                 </tr>
                                 <div id="imageModal{{ $tickets->id }}" class="modal"
